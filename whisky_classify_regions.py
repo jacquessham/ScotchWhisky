@@ -9,7 +9,7 @@ from sklearn.ensemble import RandomForestClassifier
 def k_folds_logreg(k, dataset, features, col_categories, rs):
     rows_num = dataset.shape[0] # Get nrow
     rows_fold = int(rows_num/k) # Get numbers of row for every fold
-    rows_array = np.arange(num_row) # Get an array of 0 to last index
+    rows_array = np.arange(rows_num) # Get an array of 0 to last index
     np.random.seed(rs)
     np.random.shuffle(rows_array) # shuffle the indexes
     
@@ -60,9 +60,31 @@ def k_folds_logreg(k, dataset, features, col_categories, rs):
 
     return {'clf':clf_acc_list, 'svc':svc_acc_list, 'dt':dt_acc_list,'rf':rf_acc_list}
 
+def get_avg_acc(results):
+    return {'clf':stats.mean(results['clf']),
+            'svc':stats.mean(results['svc']),
+            'dt':stats.mean(results['dt']),
+            'rf':stats.mean(results['rf'])}
+
+def print_results(results):
+    result_str = 'The accuracy of Logistic Regression is '
+    result_str += str(round(results['clf'],4))
+    result_str += '\n'
+    result_str += 'The accuracy of SVC is '
+    result_str += str(round(results['svc'],4))
+    result_str += '\n'
+    result_str += 'The accuracy of Decision Tree is '
+    result_str += str(round(results['dt'],4))
+    result_str += '\n'
+    result_str += 'The accuracy of Random Forest is '
+    result_str += str(round(results['rf'],4))
+    print(result_str)
+
+
 whisky = pd.read_csv('whisky.csv')
 whisky_features = ['Body','Sweetness','Smoky','Medicinal','Tobacco',
                    'Honey','Spicy','Winey','Nutty','Malty','Fruity',
                    'Floral']
 results = k_folds_logreg(5, whisky, whisky_features, 'Region', 49)
-print(results)
+results_avg = get_avg_acc(results)
+print_results(results_avg)
