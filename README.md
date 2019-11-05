@@ -55,7 +55,9 @@ Label Visualization:<br>
 <br>
 The result of region classification is disappointing: The best model only achieves 58% of accuracy, my expectation of a good classification model should have achieved above 80% accuracy. (Explain the models are no good)
 <br>
+<br>
 (The data set is not balanced, not good for classification model)
+<br>
 <br>
 (What about Bourbons, Irish, Japanese?)
 <br>
@@ -63,8 +65,22 @@ The result of region classification is disappointing: The best model only achiev
 I would say this approach is not a good system to recommend whiskies.
 
 ## Dendrogram
-<a href="whisky_dendrogram.py">Dendrogram Python code</a>
+Second approach is to use dendrogram to display the hierarchical relationship among distilleries. The idea is to use the quantified characters and flavor to calculate the similiarity of distilleries.
+<br>
+<br>
+
+This is the Python code for the <a href="whisky_dendrogram.py">dendrogram</a>. The dendrogram is powered by Plotly and is visualized like this:
 ![Screenshot](whisky_dendrogram.png)
+<br>
+<br>
+The problems to this approach:
+<ul>
+	<li>It does not tell you how many clusters</li>
+	<li>Visualization becomes hard to read when there are more distilleries</li>
+</ul>
+<br>
+<br>
+You may find this helpful to understand how to read a dendrogram <a href="https://www.displayr.com/what-is-dendrogram/">here on this article</a> or <a href="https://youtu.be/ijUMKMC4f9I">here at YouTube</a>
 
 ## Clustering
 <a href="whisky_clustering.py">Clustering</a>
