@@ -2,20 +2,25 @@
 The project is ongoing.
 
 ## Data
-The original data is downloaded from <a href="https://www.kaggle.com/koki25ando/scotch-whisky-dataset">Kaggle</a> which obtained the data set from WhiskyClassified.com. Additionally to the original 86 rows by 12 columns data set, I added three more columns:
+The original data is downloaded from <a href="https://www.kaggle.com/koki25ando/scotch-whisky-dataset">Kaggle</a> which obtained the data set from WhiskyClassified.com.
+<br>
+<br>
+In the original data set contains 12 columns of characters or flavors, including body, sweetness, smoky...etc. Besides those features, there are columns of distillery name, postcode, UTM latitude and UTM longitude of the distilleries.
+<br>
+<br>
+Additionally to the original 86 rows by 12 columns data set, I added three more columns:
 <ul>
 	<li>Latitude in degree</li>
 	<li>Longitude in degree</li>
 	<li>Region (Region Classification of Whisky Distillery)</li>
 </ul>
 <br>
-Note: The original data set contains latitude and longitude in UTM that I found useful to convert to degree. 
+Note: The original data set contains latitude and longitude in UTM that I found it is useful to convert to degree. 
 <br>
 <br>
-
 The data set only contains selected distilleries in Scotland that makes single-malt whiskies.
 <br>
-
+<br>
 Under the Region column, the whisky distilleries to the following regions based on the classification by <i>Collins gem - Whiskies</i>. In this book, it classifies distilleries to the following regions:
 <ul>
 	<li>Lowland</li>
@@ -23,6 +28,10 @@ Under the Region column, the whisky distilleries to the following regions based 
 	<li>Speyside</li>
 	<li>Islay and Islands</li>
 </ul>
+<br>
+<br>
+The distilleries are labeled with regions like below:
+![Screenshot](WhiskyRegion_correctlabel.jpg)
 <br>
 <br>
 You may find the data set<a href="whisky.csv"> here</a>.
@@ -37,29 +46,32 @@ The first approach is to classify which Whisky Region the whisky distilleries ar
 I will train the models with 4 algorithm: Logistic Regression, SVC, Descision Tree, and Random Forest.
 <br>
 <br>
-
-This is the code of <a href="whisky_classify_regions.py">Evaluating models</a>.
+This is the code of <a href="whisky_classify_regions.py">Evaluating models</a>. All models are evaluated with cross-validation under the same random state.
 <br>
 Result is the following:<br>
 ![Screenshot](model_results.png)
 <br>
-As the result, I found that logistic regression model has the best accuracy among all models. 
+As the result, I found that logistic regression model has the best accuracy among all models. Once it is confirmed to train the model with logistic regression, I will use all rows in the data set to train the model with the code <a href="whisky_clf.py">here</a>, and produce prediction.
 <br>
-<a href="whisky_clf.py">Logistic Regression</a><br>
-<a href="Whisky_CorrectLabel.twb">Tableau (Correct Label)</a><br>
-<a href="Whisky_WrongLabel.twb">Tableau (Wrong Label)</a><br>
-Label Visualization:<br>
-![Screenshot](WhiskyRegion_correctlabel.jpg)<br>
+<br>
+However, the problem to the logistic regression model is that the accuracy rate is too low to be useful for prediction. The visualization of wrongly label distilleries made in Tableau can be found <a href="Whisky_WrongLabel.twb">here</a>
+<br>
+<br>
+The visualization looks like this:
 ![Screenshot](WhiskyRegion_wronglabel.jpg)
 <br>
 <br>
 The result of region classification is disappointing: The best model only achieves 58% of accuracy, my expectation of a good classification model should have achieved above 80% accuracy. (Explain the models are no good)
 <br>
 <br>
-(The data set is not balanced, not good for classification model)
+There are some reasons why the models are trained and resulted in low accuracy rate.
+<ul>
+	<li>The data set is small and not balanced. There are very little observations in Lowland and Islay & Islands.</li>
+	<li>The quantitified characters and flavors among Highland and Speyside whiskies are similar.</li>
+</ul>
 <br>
 <br>
-(What about Bourbons, Irish, Japanese?)
+At the end of the day, this model is only good for Scotch whiskies even the model has a high accuracy rate. We cannot use this model to predict Irish, Japanese, or other foreign whiskies as there is no label be learnt for the regions under those foreign countries.
 <br>
 <br>
 I would say this approach is not a good system to recommend whiskies.
@@ -83,4 +95,4 @@ The problems to this approach:
 You may find this helpful to understand how to read a dendrogram <a href="https://www.displayr.com/what-is-dendrogram/">here on this article</a> or <a href="https://youtu.be/ijUMKMC4f9I">here at YouTube</a>
 
 ## Clustering
-<a href="whisky_clustering.py">Clustering</a>
+The last approach is to cluster the similar distilleries by k-means. And here is the Python code <a href="whisky_clustering.py">here</a>. The problem is find the best k for the algorithm. 
