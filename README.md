@@ -28,7 +28,6 @@ Under the Region column, the whisky distilleries to the following regions based 
 	<li>Speyside</li>
 	<li>Islay and Islands</li>
 </ul>
-<br>
 ![Screenshot](WhiskyRegion_correctlabel.jpg)
 <br>
 <br>
