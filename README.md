@@ -1,5 +1,4 @@
 # Scotch Whisky Recommendation System
-The project is ongoing.
 
 ## Data
 The original data is downloaded from <a href="https://www.kaggle.com/koki25ando/scotch-whisky-dataset">Kaggle</a> which obtained the data set from WhiskyClassified.com.
@@ -28,8 +27,8 @@ Under the Region column, the whisky distilleries to the following regions based 
 	<li>Speyside</li>
 	<li>Islay and Islands</li>
 </ul>
+The Whisky distilleries are labeled like this:
 ![Screenshot](WhiskyRegion_correctlabel.jpg)
-<br>
 <br>
 You may find the data set<a href="whisky.csv"> here</a>.
 
