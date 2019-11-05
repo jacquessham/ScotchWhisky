@@ -100,4 +100,4 @@ The code produces models for k from 3 to 12 and save the results to csv files. I
 <br>
 The result of model when k = 8 looks like this:
 <img src="k8results.png">
-
+<br>
