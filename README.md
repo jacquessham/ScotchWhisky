@@ -29,7 +29,6 @@ Under the Region column, the whisky distilleries to the following regions based 
 	<li>Islay and Islands</li>
 </ul>
 <br>
-<br>
 ![Screenshot](WhiskyRegion_correctlabel.jpg)
 <br>
 <br>
