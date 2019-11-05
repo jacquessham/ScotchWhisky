@@ -29,6 +29,7 @@ Under the Region column, the whisky distilleries to the following regions based 
 </ul>
 The Whisky distilleries are labeled like this:
 <br>
+![Screenshot](WhiskyRegion_wronglabel.jpg)
 ![Screenshot](WhiskyRegion_correctlabel.jpg)
 <br>
 <br>
