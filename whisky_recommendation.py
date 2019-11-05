@@ -19,6 +19,12 @@ def classify_whisky(n_class, X, label, rs):
 
 # Read File
 whisky = pd.read_csv('../whisky.csv')
+# The below lines are for additional data
+"""
+filepath = None
+whisky_more = pd.read_csv(filepath)
+whisky = pd.concat([whisky, whisky_more])
+"""
 # Select the features needed
 whisky_features = ['Body','Sweetness','Smoky','Medicinal','Tobacco',
                    'Honey','Spicy','Winey','Nutty','Malty','Fruity',
@@ -27,7 +33,7 @@ whisky_features = ['Body','Sweetness','Smoky','Medicinal','Tobacco',
 X = whisky[whisky_features]
 labels = whisky[['Distillery']]
 
-whisky_recommendation = classify_whisky(i, X, labels, 0)
+whisky_recommendation = classify_whisky(8, X, labels, 0)
 # Save the results to text files
 filename = 'Results/whisky_recommendation.txt'
 result_file = open(filename, 'w')
