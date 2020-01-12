@@ -95,8 +95,9 @@ You may find this helpful to understand how to read a dendrogram <a href="https:
 The last approach is to cluster the similar distilleries by k-means. And here is the Python code <a href="whisky_clustering.py">here</a>. The problem is find the best k for the algorithm.
 <br>
 <br>
-The code produces models for k from 3 to 12 and save the results to csv files. I would like to have clusters that each cluster has more than 3 distilleries but less than 10 distilleries.
+The code produces models for k from 1 to 12 and save the results to csv files. I would like to have clusters that each cluster has more than 3 distilleries but less than 10 distilleries because it makes sense to have at least 2 choices from 1 whisky and too many choices to have more than 10 choices. In the technical side, we use the Elbow Method to pick the best K.
+<br>
+<img src="eblowmethod_optimalk.jpg">
 <br>
 <br>
-
-<br>
+Based on the Elbow method, if the plot between the number of K and the SSE of each model forms an arm on the line chart, the elbow on the arm is the optimal k. And based on the chart above, we can see the elbow is somewhere between 4-6. Since the elbow is not clear, the next step is to find which model has the most balanced numbers of distilleries in each cluster.
