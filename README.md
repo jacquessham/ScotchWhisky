@@ -101,3 +101,10 @@ The code produces models for k from 1 to 12 and save the results to csv files. I
 <br>
 <br>
 Based on the Elbow method, if the plot between the number of K and the SSE of each model forms an arm on the line chart, the elbow on the arm is the optimal k. And based on the chart above, we can see the elbow is somewhere between 4-6. Since the elbow is not clear, the next step is to find which model has the most balanced numbers of distilleries in each cluster.
+<br>
+Here is the statistics on the numbers of distilleries in each cluster when K is between 4 and 6.
+<br>
+<img src="whisky_stats_4.jpg">
+<img src="whisky_stats_5.jpg">
+<img src="whisky_stats_6.jpg">
+<br>
