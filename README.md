@@ -108,3 +108,12 @@ Here is the statistics on the numbers of distilleries in each cluster when K is 
 <img src="whisky_stats_5.jpg" height="404" width="260">
 <img src="whisky_stats_6.jpg" height="404" width="280">
 <br>
+<br>
+Based on the bar charts, the variance of numbers of distilleries among clusters is the lowest when K=6, also, the maximum of numbers of cluster group is the lowest. And therefore, K=6 is the best hyperparameter in Kmean for this dataset. 
+<br>
+The result looks like this:
+<br>
+<img scr="cluster_result">
+<br>
+<br>
+Elbow method explained: <a href="https://blog.cambridgespark.com/how-to-determine-the-optimal-number-of-clusters-for-k-means-clustering-14f27070048f">Medium Post on Elbow Method</a>
