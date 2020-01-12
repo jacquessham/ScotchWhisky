@@ -104,7 +104,7 @@ Based on the Elbow method, if the plot between the number of K and the SSE of ea
 <br>
 Here is the statistics on the numbers of distilleries in each cluster when K is between 4 and 6.
 <br>
-<img src="whisky_stats_4.jpg" height="252" width="146">
-<img src="whisky_stats_5.jpg">
-<img src="whisky_stats_6.jpg">
+<img src="whisky_stats_4.jpg" height="504" width="292">
+<img src="whisky_stats_5.jpg" height="504" width="292">
+<img src="whisky_stats_6.jpg" height="504" width="292">
 <br>
