@@ -15,7 +15,8 @@ def classify_whisky(n_class, X, label, rs):
     # Append the distillery names into the their assigned group
     for distillery, group in zip(labels['Distillery'].tolist(), pred):
         whisky_groups[group].append(distillery)
-    return whisky_groups
+    # Return whisky group and sse of the model
+    return whisky_groups, cluster_machine.inertia_
 
 # Read File
 whisky = pd.read_csv('../whisky.csv')
@@ -26,10 +27,12 @@ whisky_features = ['Body','Sweetness','Smoky','Medicinal','Tobacco',
 # Get the features and distillery names from the data set
 X = whisky[whisky_features]
 labels = whisky[['Distillery']]
+sse_list = []
 
-# Try 3-12 classes
-for i in range(3,13):
-    whisky_recommendation = classify_whisky(i, X, labels, 0)
+# Try 1-12 classes
+for i in range(1,13):
+    whisky_recommendation, sse = classify_whisky(i, X, labels, 0)
+    sse_list.append((i,sse))
     # Save the results to text files
     filename = 'Results/whisky_cluster_results_'
     filename += str(i) + '.txt'
@@ -48,4 +51,13 @@ for i in range(3,13):
         result_file.write('\n')
     result_file.close()
 
-
+# Save the sse in csv file
+sse_filename = 'Results/model_sse.csv'
+sse_file = open(sse_filename, 'w')
+sse_file.write('k,sse\n')
+for k, sse in sse_list:
+    sse_file.write(str(k))
+    sse_file.write(',')
+    sse_file.write(str(sse))
+    sse_file.write('\n')
+sse_file.close()

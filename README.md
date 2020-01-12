@@ -95,9 +95,8 @@ You may find this helpful to understand how to read a dendrogram <a href="https:
 The last approach is to cluster the similar distilleries by k-means. And here is the Python code <a href="whisky_clustering.py">here</a>. The problem is find the best k for the algorithm.
 <br>
 <br>
-The code produces models for k from 3 to 12 and save the results to csv files. I would like to have clusters that each cluster has more than 3 distilleries but less than 10 distilleries. Looking at all results, the model when k = 8 fits this requirement the best (Although two clusters still have more than 10 distilleries).
+The code produces models for k from 3 to 12 and save the results to csv files. I would like to have clusters that each cluster has more than 3 distilleries but less than 10 distilleries.
 <br>
 <br>
-The result of model when k = 8 looks like this:
-<img src="k8results.png">
+
 <br>
