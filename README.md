@@ -113,7 +113,7 @@ Based on the bar charts, the variance of numbers of distilleries among clusters 
 <br>
 The result looks like this:
 <br>
-<img src="model_results.png">
+<img src="cluster_result.png">
 <br>
 <br>
 Elbow method explained: <a href="https://blog.cambridgespark.com/how-to-determine-the-optimal-number-of-clusters-for-k-means-clustering-14f27070048f">Medium Post on Elbow Method</a>
