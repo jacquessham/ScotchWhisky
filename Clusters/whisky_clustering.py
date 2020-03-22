@@ -30,14 +30,22 @@ labels = whisky[['Distillery']]
 sse_list = []
 
 # Try 1-12 classes
+# Each loop, produce clusters with distilleries, sse, size of each cluster
 for i in range(1,13):
     whisky_recommendation, sse = classify_whisky(i, X, labels, 0)
     sse_list.append((i,sse))
-    # Save the results to text files
-    filename = 'Results/whisky_cluster_results_'
+    # Open result file and save the results to text files
+    filename = 'Results/Clusters/whisky_cluster_results_'
     filename += str(i) + '.txt'
     result_file = open(filename, 'w')
+    # Open stats file and save stats to csv files
+    filename_stats = 'Results/Stats/whisky_stats_'
+    filename_stats += str(i) + '.csv'
+    stats_file = open(filename_stats, 'w')
+    stats_file.write('group,size\n')
+
     for j in whisky_recommendation:
+        # Write Result file first
         result_file.write('Group ')
         result_file.write(str(j+1))
         result_file.write(': ')
@@ -49,11 +57,17 @@ for i in range(1,13):
                 result_file.write(whisky_recommendation[j][k])
         result_file.write('\n')
         result_file.write('\n')
+        # Write Stats file afterward
+        stats_file.write(str(j+1))
+        stats_file.write(',')
+        stats_file.write(str(len(whisky_recommendation[j])))
+        stats_file.write('\n')
     result_file.close()
+    stats_file.close()
 
 # Save the sse in csv file
-sse_filename = 'Results/model_sse.csv'
-sse_file = open(sse_filename, 'w')
+filename_sse = 'Results/SSE/model_sse.csv'
+sse_file = open(filename_sse, 'w')
 sse_file.write('k,sse\n')
 for k, sse in sse_list:
     sse_file.write(str(k))
