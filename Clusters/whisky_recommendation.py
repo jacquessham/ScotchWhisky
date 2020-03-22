@@ -15,7 +15,7 @@ def classify_whisky(n_class, X, label, rs):
     # Append the distillery names into the their assigned group
     for distillery, group in zip(labels['Distillery'].tolist(), pred):
         whisky_groups[group].append(distillery)
-    return whisky_groups
+    return whisky_groups, pred
 
 # Read File
 whisky = pd.read_csv('../whisky.csv')
@@ -33,8 +33,10 @@ whisky_features = ['Body','Sweetness','Smoky','Medicinal','Tobacco',
 X = whisky[whisky_features]
 labels = whisky[['Distillery']]
 
-whisky_recommendation = classify_whisky(8, X, labels, 0)
-# Save the results to text files
+whisky_recommendation, pred = classify_whisky(6, X, labels, 0)
+
+
+# Save the results to text files for displaying purpose
 filename = 'Results/whisky_recommendation.txt'
 result_file = open(filename, 'w')
 for i in whisky_recommendation:
@@ -50,3 +52,8 @@ for i in whisky_recommendation:
     result_file.write('\n')
     result_file.write('\n')
 result_file.close()
+
+# Add a column to whisky.csv for grouping
+pred = pd.DataFrame(pred, columns=['Cluster'])
+whisky = pd.concat([whisky,pred], axis=1)
+whisky.to_csv('Results/whisky_with_cluster.csv', index=False)
