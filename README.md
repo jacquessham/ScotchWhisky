@@ -43,7 +43,7 @@ The first approach is to classify which Whisky Region the whisky distilleries ar
 I will train the models with 4 algorithm: Logistic Regression, SVC, Descision Tree, and Random Forest.
 <br>
 <br>
-This is the code of <a href="whisky_classify_regions.py">Evaluating models</a>. All models are evaluated with cross-validation under the same random state.
+This is the code of <a href="RegionClassification/whisky_classify_regions.py">Evaluating models</a>. All models are evaluated with cross-validation under the same random state.
 <br>
 Result is the following:<br>
 ![Screenshot](model_results.png)
@@ -78,8 +78,8 @@ Second approach is to use dendrogram to display the hierarchical relationship am
 <br>
 <br>
 
-This is the Python code for the <a href="whisky_dendrogram.py">dendrogram</a>. The dendrogram is powered by Plotly and is visualized like this:
-![Screenshot](whisky_dendrogram.png)
+This is the Python code for the <a href="Dendrogram/whisky_dendrogram.py">dendrogram</a>. The dendrogram is powered by Plotly and is visualized like this:
+![Screenshot](Images/whisky_dendrogram.png)
 <br>
 <br>
 The problems to this approach:
