@@ -46,16 +46,16 @@ I will train the models with 4 algorithm: Logistic Regression, SVC, Descision Tr
 This is the code of <a href="RegionClassification/whisky_classify_regions.py">Evaluating models</a>. All models are evaluated with cross-validation under the same random state.
 <br>
 Result is the following:<br>
-![Screenshot](model_results.png)
+![Screenshot](Images/model_results.png)
 <br>
-As the result, I found that logistic regression model has the best accuracy among all models. Once it is confirmed to train the model with logistic regression, I will use all rows in the data set to train the model with the code <a href="whisky_clf.py">here</a>, and produce prediction.
+As the result, I found that logistic regression model has the best accuracy among all models. Once it is confirmed to train the model with logistic regression, I will use all rows in the data set to train the model with the code <a href="RegionClassification/TableauFiles/whisky_clf.py">here</a>, and produce prediction.
 <br>
 <br>
-However, the problem to the logistic regression model is that the accuracy rate is too low to be useful for prediction. The visualization of wrongly label distilleries made in Tableau can be found <a href="Whisky_WrongLabel.twb">here</a>
+However, the problem to the logistic regression model is that the accuracy rate is too low to be useful for prediction. The visualization of wrongly label distilleries made in Tableau can be found <a href="RegionClassification/TableauFiles/Whisky_WrongLabel.twb">here</a>
 <br>
 <br>
 The visualization looks like this:
-![Screenshot](WhiskyRegion_wronglabel.jpg)
+![Screenshot](Images/WhiskyRegion_wronglabel.jpg)
 <br>
 <br>
 The result of region classification is disappointing: The best model only achieves 58% of accuracy, my expectation of a good classification model should have achieved above 80% accuracy. (Explain the models are no good)
@@ -117,3 +117,8 @@ The result looks like this:
 <br>
 <br>
 Elbow method explained: <a href="https://blog.cambridgespark.com/how-to-determine-the-optimal-number-of-clusters-for-k-means-clustering-14f27070048f">Medium Post on Elbow Method</a>
+<br>
+If we choose K=6, the result of the clustering looks like this on the map:
+<br>
+<img src="Images/ClusteringDistilleries.jpg">
+
