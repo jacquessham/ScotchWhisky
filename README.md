@@ -28,10 +28,10 @@ Under the Region column, the whisky distilleries to the following regions based 
 	<li>Islay and Islands</li>
 </ul>
 The Whisky distilleries are labeled like this:
-<img src="WhiskyRegion_correctlabel.jpg">
+<img src="Images/WhiskyRegion_correctlabel.jpg">
 <br>
 <br>
-You may find the data set<a href="whisky.csv"> here</a>.
+You may find the data set<a href="Data/whisky.csv"> here</a>.
 
 ## Goal of this Project
 The goal of this project is to build a content-based recommendation system for whiskies. It means recommending a whisky based on the similarity between two whiskies. There are more than 86 brands of Scotch whisky and I want a model/system to recommend other brands based on the characters and flavor.
@@ -97,23 +97,23 @@ The last approach is to cluster the similar distilleries by k-means. And here is
 <br>
 The code produces models for k from 1 to 12 and save the results to csv files. I would like to have clusters that each cluster has more than 3 distilleries but less than 10 distilleries because it makes sense to have at least 2 choices from 1 whisky and too many choices to have more than 10 choices. In the technical side, we use the Elbow Method to pick the best K.
 <br>
-<img src="eblowmethod_optimalk.jpg">
+<img src="Images/eblowmethod_optimalk.jpg">
 <br>
 <br>
 Based on the Elbow method, if the plot between the number of K and the SSE of each model forms an arm on the line chart, the elbow on the arm is the optimal k. And based on the chart above, we can see the elbow is somewhere between 4-6. Since the elbow is not clear, the next step is to find which model has the most balanced numbers of distilleries in each cluster.
 <br>
 Here is the statistics on the numbers of distilleries in each cluster when K is between 4 and 6.
 <br>
-<img src="whisky_stats_4.jpg" height="404" width="234">
-<img src="whisky_stats_5.jpg" height="404" width="260">
-<img src="whisky_stats_6.jpg" height="404" width="280">
+<img src="Images/whisky_stats_4.jpg" height="404" width="234">
+<img src="Images/whisky_stats_5.jpg" height="404" width="260">
+<img src="Images/whisky_stats_6.jpg" height="404" width="280">
 <br>
 <br>
 Based on the bar charts, the variance of numbers of distilleries among clusters is the lowest when K=6, also, the maximum of numbers of cluster group is the lowest. And therefore, K=6 is the best hyperparameter in Kmean for this dataset. 
 <br>
 The result looks like this:
 <br>
-<img src="cluster_result.png">
+<img src="Images/cluster_result.png">
 <br>
 <br>
 Elbow method explained: <a href="https://blog.cambridgespark.com/how-to-determine-the-optimal-number-of-clusters-for-k-means-clustering-14f27070048f">Medium Post on Elbow Method</a>
