@@ -54,6 +54,7 @@ for i in whisky_recommendation:
 result_file.close()
 
 # Add a column to whisky.csv for grouping
+pred += 1 # Increment 1 to turn 0-base to 1-base cluster
 pred = pd.DataFrame(pred, columns=['Cluster'])
 whisky = pd.concat([whisky,pred], axis=1)
 whisky.to_csv('Results/whisky_with_cluster.csv', index=False)
