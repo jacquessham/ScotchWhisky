@@ -31,15 +31,30 @@ while (recommend_method < 1 or recommend_method > 3):
 if recommend_method == 1:
     firstwhisky_index, firstwhisky = sc.getWhisky(whiskynames)
     cluster = whisky2group[firstwhisky]
-
+    
+    """
+    # Use this block if sort by physical distilleries distance
     firstwhisky_loc = [whiskydata.loc[whiskydata.index[firstwhisky_index],'Lat'],
                        whiskydata.loc[whiskydata.index[firstwhisky_index],'Lon']]
     recommendation = whiskydata[whiskydata['Cluster']==cluster]
     recommendation['distance'] = np.linalg.norm(recommendation[['Lat','Lon']]
                                     .sub(np.array(firstwhisky_loc)), axis=1)
+    """
+    # Use this blick if sort by flavor similarity
+    whisky_features = ['Body','Sweetness','Smoky','Medicinal','Tobacco',
+                       'Honey','Spicy','Winey','Nutty','Malty','Fruity',
+                       'Floral']
+    firstwhisky_loc = whiskydata.loc[whiskydata.index[firstwhisky_index],
+                                     whisky_features]
+    firstwhisky_loc = firstwhisky_loc.values
+    recommendation = whiskydata[whiskydata['Cluster']==cluster]
+    recommendation['distance'] = recommendation[whisky_features] \
+                                   .sub(np.array(firstwhisky_loc)).pow(2) \
+                                   .sum(1).pow(0.5)
     recommendation = recommendation.sort_values(by=['distance'])
     # Remove the first element which is a duplicated entry
     recommendation = recommendation['Distillery'].tolist()[1:]
+
 elif recommend_method == 2:
     recommendation = sc.getWhiskyByFlavor(whiskydata)
 elif recommend_method == 3:
@@ -48,12 +63,12 @@ elif recommend_method == 3:
 # Display result
 if recommendation is not None:
     if recommend_method == 1:
-        print("This is the list of recommendation in order:")
+        print("This is the list of recommendation order by similarity:")
     elif recommend_method == 2:
         print("This is the list of recommendation in alphabetical order:")
     counter = 1
     for distillery in recommendation:
-        print(counter,'. ',distillery, sep='')
+        print(counter,'.\t',distillery, sep='')
         counter += 1
 else:
     print("Choose Macallan.")
