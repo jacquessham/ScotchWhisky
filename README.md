@@ -135,5 +135,4 @@ The application will use K=6 to train a K Mean model. The are three ways to retu
 3. If nothing is entered, application suggests Macallan. (See the Application folder for explaination) 
 <br>
 <br>
-You may find the codes [here](/RecommendationApplication/README.md)
-[here](/RecommendationApplication/README.md)
+You may find the codes <a href="https://github.com/jacquessham/ScotchWhisky/tree/master/RecommendationApplication">here</a>
