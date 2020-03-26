@@ -122,3 +122,17 @@ If we choose K=6, the result of the clustering looks like this on the map:
 <br>
 <img src="Images/ClusteringDistilleries.jpg">
 
+## Application
+The application will use K=6 to train a K Mean model. The are three ways to return a list of recommendation:
+<ul>
+	<li>Enter a whisky distillery name</li>
+	<li>Choose from a list of characters and flavors</li>
+	<li>Nothing</li>
+</ul>
+<br>
+1. If we enter a whisky distillery name, the application return a list of whiskies within the same cluster. The list of whiskies are sorted by the flavor similarity
+2. If we choose from a list of character and flavors, the application return a list of whiskies that meets the criteria. Note that the whiskies on the list do not belong the same cluster.
+3. If nothing is entered, application suggests Macallan. (See the Application folder for explaination) 
+<br>
+<br>
+You may find the codes <a href="RecommendationApplicaiton">here</a>
