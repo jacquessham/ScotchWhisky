@@ -53,10 +53,10 @@ Under the Region column, the whisky distilleries to the following regions based 
 	<li>Islay and Islands</li>
 </ul>
 The Whisky distilleries are labeled like this:
-<img src="Images/WhiskyRegion_correctlabel.jpg">
+<img src="../Images/WhiskyRegion_correctlabel.jpg">
 <br>
 <br>
-You may find the data set [here](../Data/whisky.csv)
+You may find the data set <a href="https://github.com/jacquessham/ScotchWhisky/blob/master/Data/whisky.csv">here</a>
 
 
 ## Region Classification
