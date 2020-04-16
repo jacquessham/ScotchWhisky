@@ -6,5 +6,5 @@ whisky_dendrogram.py is the code to read the data and visualize the dendrogram t
 
 ## Result
 The result looks like this:
-<img src='../Images/dendrogram.png'
+<img src='../Images/dendrogram.png'>
 

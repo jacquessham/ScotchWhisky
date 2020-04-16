@@ -2,9 +2,9 @@
 
 This project is aimed to build a content-based recommendation system to help Scotch whisky salesmen to recommend Scotch Whisky to a customer based on the quantified quality of the Scotch whiskies. 
 <br><br>
-If you would like to understand the steps how the recommendation system is built, please refer to the [Report](/Report). If you would like to read it in the Medium post, you may refer to the <a href="https://towardsdatascience.com/recommending-scotch-whisky-ea440c2eb289">Medium Post</a>
+Please refer to [Report](/Report) to understand the process of how the recommendation system is built. Also, there is a Medium Post to talk about this project. If you would like to read the Medium post, you may refer to the <a href="https://towardsdatascience.com/recommending-scotch-whisky-ea440c2eb289">link</a>
 <br><br>
-Here are the brief structure of this repositories.
+Here are the brief structure of this repository.
 
 ## Data
 The original data is downloaded from <a href="https://www.kaggle.com/koki25ando/scotch-whisky-dataset">Kaggle</a> which obtained the data set from WhiskyClassified.com.
@@ -63,7 +63,7 @@ The application will use K=6 to train a K Mean model. The are three ways to retu
 3. If nothing is entered, application suggests Macallan. (See the Application folder for explaination) 
 <br>
 <br>
-You may find the codes and the captures in the [RecommendationApplication](RecommendationApplication)
+You may find the codes and the captures in the <a href="https://github.com/jacquessham/ScotchWhisky/tree/master/RecommendationApplication">RecommendationApplication</a>
 
 ## Report
 In the [Report folder](Report), there is a report of going over how the recommendation system is built by choosing the best model from Region Classification, Dendrogram, and K-means Clustering.

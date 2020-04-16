@@ -23,3 +23,7 @@ On the bar charts produced by Visualization_ScottchClusting.twb, we found that w
 ## Prototype Model
 Once we have figured out K is 6, we can train the model with this hyperparameter. The file whisky_recommendation.py train this model and cluster distilleries into 6 groups. This file returns the result and saved in a text file. The result looks like this:
 <img src="../Images/cluster_result.png">
+<br><br>
+Or it looks like this on the map:
+<br>
+<img src="ClusteringDistilleries.jpg">
