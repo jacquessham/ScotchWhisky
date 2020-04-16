@@ -2,7 +2,7 @@
 The report goes over the process of how I built the Scotch Recommendation System step-by-step and the thought on the recommendation system. 
 
 ## Goal of this Project
-The goal of this project is to build a content-based recommendation system for whiskies. It means recommending a whisky based on the similarity between two whiskies. There are more than 86 brands of Scotch whisky and I want a model/system to recommend other brands based on the characters and flavor.
+The goal of this project is to build a content-based recommendation system for whiskies. It means recommending a whisky based on the similarity between two whiskies. There are more than 86 brands of Scotch whisky (86 Rows) and I want a model/system to recommend other brands based on the characters and flavor.
 <br><br>
 I set two goals for the recommendation system:
 1. If we have a person prefer one whisky from one distillery, I can recommend a whisky with similar flavor.
@@ -12,7 +12,24 @@ I set two goals for the recommendation system:
 The original data is downloaded from <a href="https://www.kaggle.com/koki25ando/scotch-whisky-dataset">Kaggle</a> which obtained the data set from WhiskyClassified.com.
 <br>
 <br>
-In the original data set contains 12 columns of characters or flavors, including body, sweetness, smoky...etc. Besides those features, there are columns of distillery name, postcode, UTM latitude and UTM longitude of the distilleries.
+In the original data set contains 12 columns of characters or flavors, including body, sweetness, smoky...etc. Besides those features, there are columns of distillery name, postcode, UTM latitude and UTM longitude of the distilleries. The columns looks like this:
+<ul>
+	<li>Distillery — Name of Distillery (String)</li>
+	<li>Body (Integer, range from 0–4)</li>
+	<li>Sweetness (Integer, range from 0–4)</li>
+	<li>Medicinal (Integer, range from 0–4)</li>
+	<li>Tobacco (Integer, range from 0–4)</li>
+	<li>Honey (Integer, range from 0–4)</li>
+	<li>Spicy (Integer, range from 0–4)</li>
+	<li>Winey (Integer, range from 0–4)</li>
+	<li>Nutty (Integer, range from 0–4)</li>
+	<li>Malty (Integer, range from 0–4)</li>
+	<li>Fruity (Integer, range from 0–4)</li>
+	<li>Floral (Integer, range from 0–4)</li>
+	<li>Postcode — Zipcode of the distillery (String)</li>
+	<li>LatitudeUTM — Latitude in UTM format (Integer)</li>
+	<li>LongitudeUTM — Longitude in UTM format (Integer)</li>
+</ul>
 <br>
 <br>
 Additionally to the original 86 rows by 12 columns data set, I added three more columns:
@@ -22,7 +39,7 @@ Additionally to the original 86 rows by 12 columns data set, I added three more 
 	<li>Region (Region Classification of Whisky Distillery)</li>
 </ul>
 <br>
-Note: The original data set contains latitude and longitude in UTM that I found it is useful to convert to degree. 
+Note: The original data set contains latitude and longitude in UTM that I found it is useful to convert to degree. Latititude and Longitude in degree are very handy to visualize in Tableau.
 <br>
 <br>
 The data set only contains selected distilleries in Scotland that makes single-malt whiskies.
@@ -39,8 +56,7 @@ The Whisky distilleries are labeled like this:
 <img src="Images/WhiskyRegion_correctlabel.jpg">
 <br>
 <br>
-You may find the data set<a href="Data/whisky.csv"> here</a>.
-
+You may find the data set [here](../Data/whisky.csv)
 
 
 ## Region Classification

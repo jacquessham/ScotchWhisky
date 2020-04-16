@@ -58,12 +58,12 @@ The application will use K=6 to train a K Mean model. The are three ways to retu
 	<li>Nothing</li>
 </ul>
 <br>
-1. If we enter a whisky distillery name, the application return a list of whiskies within the same cluster. The list of whiskies are sorted by the flavor similarity
-2. If we choose from a list of character and flavors, the application return a list of whiskies that meets the criteria. Note that the whiskies on the list do not belong the same cluster.
+1. If we enter a whisky distillery name, the application return a list of whiskies within the same cluster. The list of whiskies are sorted by the flavor similarity<br>
+2. If we choose from a list of character and flavors, the application return a list of whiskies that meets the criteria. Note that the whiskies on the list do not belong the same cluster.<br>
 3. If nothing is entered, application suggests Macallan. (See the Application folder for explaination) 
 <br>
 <br>
-You may find the codes <a href="https://github.com/jacquessham/ScotchWhisky/tree/master/RecommendationApplication">here</a> or the [application folder](RecommendationApplication)
+You may find the codes and the captures in the [application folder](RecommendationApplication)
 
 ## Report
 In the [Report folder](Report), there is a report of going over how the recommendation system is built by choosing the best model from Region Classification, Dendrogram, and K-means Clustering.

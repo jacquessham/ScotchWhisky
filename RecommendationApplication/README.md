@@ -47,5 +47,30 @@ There is 2 code files and 1 csv file required.
 	<li> whisky_with_cluster.csv - CSV file with assigned group</li>
 </ul>
 <br>
-First, you need to have use <a href="../Clusters/whisky_recommendation.py">whisky_recommendation.py file</a> to assign each distillery to a group and save to whisky_with_cluster.csv (So that, it does not require the application to train the model every time it runs). Then, whisky_recommender.py would ask which method to recommend whisky, by entering distillery name, selecting flavor and its strength, or input nothing (That represents the 3 cases discussed in last section).
+First, you need to have use <a href="../Clusters/whisky_recommendation.py">whisky_recommendation.py file</a> to assign each distillery to a group and save to whisky_with_cluster.csv (So that, it does not require the application to train the model every time it runs). Then, run whisky_recommender.py. It will ask which method to recommend whisky, by entering distillery name, selecting flavor and its strength, or input nothing (That represents the 3 cases discussed in last section).
+
+### Option 1: Entering whisky name
+If the user enters the distillery name, the application will find the whisky brands have the similar character/flavor, sorted by the similarity. The similarity is calculated by the Euclidean distance of the quantified flavor and characters (The norm of the two whisky’s flavor and characters).
 <br>
+<img src="../Images/method1b.png">
+<br>
+For example, if we enter “Bowmore”, the list will be sorted by Highland Park, Springbank…etc, because the Euclidean distance of the flavor and characters between Bowmore and Highland Park is the shortest, followed by Springbank. This a better approach as the list is sorted by the content of the whiskies.
+
+
+### Option 2: Choosing flavor
+If the user does not know any whisky but he/she knows what flavor he/she likes, this option allows the user to enter his/her preference that the application would find the best fit whiksy to the user. The application would list all the features we have in the data set and ask the consumer to pick one and score between 1–4. The application does not allow user to select 0 because 0 means None. Once the consumer has picked and scored the feature, the application would filter a list of whisky that fits the consumer’s preference. If we do not have any whisky that meets the requirement, the application would score down to return a list with a weaker flavor (we assume people are more likely to accept lighter flavor than heavier flavor)
+<br>
+<img src="../Images/method2.png">
+<br>
+Once the list is generated, the list of whisky is sorted by alphabetical order and the whiskies do not belong to the same cluster. it requires the work between the recommender and consumers to figure out which whisky consumers like by the recommender’s domain expertise. However, the application makes the recommender’s life easier because the application has filtered to a smaller list from a larger pool of choices. The goal is to find the very first whisky the user likes the most first. Once the first whiksy is figured out, we can recommend a similar whisky from the first whisky.
+
+### Option 3: No idea where to start
+As we have discussed Cold Start Problem, if the consumer has no idea on whisky nor picking a flavor, recommend Macallan.
+<br>
+<img src="../Images/method3.png">
+
+## The Drawback and Thought to this Model/Application
+1. One observation for each distillery, it does not recommend which label among all products within one distillery. For example, if the application recommends Laphroaig, it does not tell you whether the user should get 10 Years, Lore, or other label.<br>
+2. Concern to how the data is collected<br>
+3. Only Single-malt whisky is availabled in the data set, missing blended whisky<br>
+4. The model only suits for Scotch Whisky. Other whiskies/whiskeys are fundamentally different in character with Scotch whiskies. Since only Scotch whisky data is available, it is not a good idea to include other whiskies/whiskeys.
