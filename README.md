@@ -18,7 +18,7 @@ Additionally to the original 86 rows by 12 columns data set, I added three more 
 	<li>Region (Region Classification of Whisky Distillery)</li>
 </ul>
 <br>
-You may find the data set<a href="Data/whisky.csv"> here</a> or the detail of the data set [here](Data).
+You may find the data set [here](Data/whisky.csv) or the detail of the data set [here](Data).
 
 ## Goal of this Project
 The goal of this project is to build a content-based recommendation system for whiskies. It means recommending a whisky based on the similarity between two whiskies. There are more than 86 brands of Scotch whisky and I want a model/system to recommend other brands based on the characters and flavor.
@@ -36,9 +36,9 @@ Second approach is to use dendrogram to display the hierarchical relationship am
 This is the Python code for the <a href="Dendrogram/whisky_dendrogram.py">dendrogram</a> or the [Dendrogram Folder](Dendrogram)
 
 ## Clustering
-The last approach is to cluster the similar distilleries by k-means. And here is the Python code <a href="whisky_clustering.py">here</a>. The problem is find the best k for the algorithm.
+The last approach is to cluster the similar distilleries by k-means. And here is the Python code [here](Clusters/whisky_clustering.py) The problem is find the best k for the algorithm.
 <br><br>
-You may go to the [Clustering folder](Clustering) to find out the process of how the recommendation system using k-means.
+You may go to the [Clusters folder](Clusters) to find out the process of how the recommendation system using k-means.
 <br>
 The result looks like this:
 <br>
@@ -63,7 +63,7 @@ The application will use K=6 to train a K Mean model. The are three ways to retu
 3. If nothing is entered, application suggests Macallan. (See the Application folder for explaination) 
 <br>
 <br>
-You may find the codes and the captures in the [application folder](RecommendationApplication)
+You may find the codes and the captures in the [RecommendationApplication](RecommendationApplication)
 
 ## Report
 In the [Report folder](Report), there is a report of going over how the recommendation system is built by choosing the best model from Region Classification, Dendrogram, and K-means Clustering.
