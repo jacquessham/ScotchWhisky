@@ -1,36 +1,21 @@
-#Import the Tkinter Library
 from tkinter import *
 
-#Create an instance of Tkinter Frame
-win = Tk()
+rows = []
 
-#Set the geometry of window
-win.geometry("700x350")
+for i in range(5):
 
-#Initialize a Frame
-frame = Frame(win)
+    cols = []
 
-def clear_all():
-   for item in frame.winfo_children():
-      item.destroy()
-      button.config(state= "disabled")
+    for j in range(4):
 
-#Define a ListBox widget
-listbox = Listbox(frame, height=10, width= 15, bg= 'grey', activestyle= 'dotbox',font='aerial')
-listbox.insert(1,"Go")
-listbox.insert(1,"Java")
-listbox.insert(1,"Python")
-listbox.insert(1,"C++")
-listbox.insert(1,"Ruby")
+        e = Entry(relief=RIDGE,font=('Arial',16,'bold'))
 
-listbox.pack()
+        e.grid(row=i, column=j, sticky=NSEW)
 
-label = Label(win, text= "Top 5 Programming Languages", font= ('Helvetica 15 bold'))
-label.pack(pady= 20)
-frame.pack()
+        e.insert(END, '%d.%d' % (i, j))
 
-#Create a button to remove all the children in the frame
-button = Button(win, text= "Clear All", font= ('Helvetica 11'), command= clear_all)
-button.pack()
+        cols.append(e)
 
-win.mainloop()
+    rows.append(cols)
+
+mainloop()

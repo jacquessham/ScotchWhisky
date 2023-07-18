@@ -1,4 +1,4 @@
-from tkinter import messagebox, ttk, RIDGE, END
+from tkinter import messagebox, ttk, RIDGE, END, Entry, NSEW
 import tkinter as tk
 from pygui.recommendation import *
 
@@ -12,9 +12,47 @@ def create_dropdown(parent, dropdown_menu):
 		width=30
 		)
 
+# Clear frame after some user selection
 def clear_frame(frame):
 	for item in frame.winfo_children():
 		item.destroy()
+
+# Convert a list of recommendation to a table
+def plot_table(root, recommendation):
+	height = len(recommendation)//4 + 1
+
+	if len(recommendation) > 0:
+		# Create a children frame
+		subframe_message = tk.Frame(root)
+
+		# Show the message
+		message = tk.Label(master=subframe_message,
+			text='Here are our recommendation:')
+		message.pack()
+		subframe_message.pack()
+
+		# Show the table
+		subframe_recommention = tk.Frame(root)
+	
+		for i in range(height):
+			for j in range(4):
+				i_recommendation = i*4+j
+				if i_recommendation < len(recommendation):
+					e = Entry(subframe_recommention, relief=RIDGE)
+					e.grid(row=i, column=j, sticky=NSEW)
+					e.insert(END, recommendation[i_recommendation])
+		subframe_recommention.pack()
+		return True
+	else:
+		message = f"Sorry! There is no matching Whisky for your selection. "
+		message += f"Please choose another flavour!"
+		messagebox.showinfo(
+			title='No Matching!',
+			message=message
+			)
+		return False
+
+	
 
 # Display Frontpage
 def display_frontpage(whiskydata, whiskynames, whisky2group):
@@ -27,6 +65,10 @@ def display_frontpage(whiskydata, whiskynames, whisky2group):
 			messagebox.showinfo(
 					title='Testing!',
 					message=f"User entered {user_input}"
+					)
+			messagebox.showinfo(
+					title='Coming Soon!',
+					message=f"The feature is still developing, will be released soon!"
 					)
 
 		# Helper function for choice 2
@@ -48,12 +90,22 @@ def display_frontpage(whiskydata, whiskynames, whisky2group):
 
 					# Numeric value of choice_strength
 					num_choice_strength = strengthlist.index(choice_strength)
-					# Delete later
+					# Popup Message of user's choice
 					messagebox.showinfo(
 						title='Testing!',
 						message=f"User entered {choice_strength} {choice_flavour}"
 						)
-					flavour_recommendation(whiskydata, choice_flavour, num_choice_strength, whisky_features, strengthlist)
+					clear_frame(frame3_dropdown_frame)
+					frame_recommendation = tk.Frame(frame3_dropdown_frame)
+
+					recommendation = flavour_recommendation(whiskydata, choice_flavour, num_choice_strength, whisky_features, strengthlist)
+					successful_recommendation = plot_table(frame_recommendation, recommendation)
+					frame_recommendation.pack()
+
+					if not successful_recommendation:
+						clear_frame(frame3)
+
+					# End flavour_choice
 
 				clear_frame(frame3)
 				frame3_question = tk.Frame(frame3)
@@ -69,8 +121,10 @@ def display_frontpage(whiskydata, whiskynames, whisky2group):
 				frame3_question.pack()
 				frame3_dropdown.pack()
 				frame3_dropdown_frame.pack()
+			# End choice2_dropdown
+		# display_frontpage Helper functions end here
 
-
+		# display_frontpage core operations begins here
 		selection = frontpage_dropdown.get()
 		choice = int(selection[0])
 		clear_frame(frame_page2_input)
