@@ -6,10 +6,14 @@ from pydata.load_data import *
 
 # Window Configuration
 gui = tk.Tk()
-gui.geometry('800x600')
+gui.geometry('800x1000')
 gui.title('Whisky Recommender')
 
-whiskydata, whiskynames, whisky2group = get_data('../Clusters/Results/whisky_with_cluster.csv')
+# Load Data
+filename = '../Clusters/Results/whisky_with_cluster.csv'
+whiskydata, whiskynames, whisky2group = get_data(filename)
+
+# Render GUI Layout
 display_frontpage(whiskydata, whiskynames, whisky2group)
 
 gui.mainloop()
