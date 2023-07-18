@@ -1,5 +1,6 @@
 from tkinter import messagebox, ttk, RIDGE, END
 import tkinter as tk
+from pygui.recommendation import *
 
 
 # GUI helper function
@@ -16,7 +17,7 @@ def clear_frame(frame):
 		item.destroy()
 
 # Display Frontpage
-def display_frontpage():
+def display_frontpage(whiskydata, whiskynames, whisky2group):
 	# Helper function for frontpage actions
 	def frontpage_selection(event):
 		# Helper function for choice 1
@@ -44,10 +45,15 @@ def display_frontpage():
 				def flavour_choice(event):
 					choice_flavour = frame2_dropdown.get()
 					choice_strength = frame3_dropdown.get()
+
+					# Numeric value of choice_strength
+					num_choice_strength = strengthlist.index(choice_strength)
+					# Delete later
 					messagebox.showinfo(
 						title='Testing!',
 						message=f"User entered {choice_strength} {choice_flavour}"
 						)
+					flavour_recommendation(whiskydata, choice_flavour, num_choice_strength, whisky_features, strengthlist)
 
 				clear_frame(frame3)
 				frame3_question = tk.Frame(frame3)

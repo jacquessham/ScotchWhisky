@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-import script as sc
+import script.script_helper as sc
 
 
 # Subpress warings
