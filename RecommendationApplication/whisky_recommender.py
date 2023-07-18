@@ -6,7 +6,7 @@ import script as sc
 # Subpress warings
 pd.set_option('mode.chained_assignment', None)
 # Read file
-whiskydata = pd.read_csv("../whisky_with_cluster.csv")
+whiskydata = pd.read_csv("../Clusters/Results/whisky_with_cluster.csv")
 # Obtain the list of distilleries for function parameters
 whiskynames = whiskydata['Distillery'].tolist()
 # Build name to cluster and cluster to name dictionaries

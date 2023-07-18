@@ -18,7 +18,7 @@ def classify_whisky(n_class, X, label, rs):
     return whisky_groups, pred
 
 # Read File
-whisky = pd.read_csv('../whisky.csv')
+whisky = pd.read_csv('../Data/whisky.csv')
 # The below lines are for additional data
 """
 filepath = None
