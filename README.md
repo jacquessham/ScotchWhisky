@@ -4,6 +4,8 @@ This project is aimed to build a content-based recommendation system to help Sco
 <br><br>
 Please refer to [Report](/Report) to understand the process of how the recommendation system is built. Also, there is a Medium Post to talk about this project. If you would like to read the Medium post, you may refer to the <a href="https://towardsdatascience.com/recommending-scotch-whisky-ea440c2eb289">link</a>
 <br><br>
+<b>If you are interested with the application which can recommend whisky to you, you may check out the <a href="https://github.com/jacquessham/ScotchWhisky/tree/master/RecommendationApplication">Recommendation Application</a> folder</b>.
+<br><br>
 Here are the brief structure of this repository.
 
 ## Data
