@@ -18,23 +18,23 @@ In this case, we simply recommend a whisky very similar to the whisky consumer l
 	<li>Physical Distance between distilleries</li>
 	<li>Euclidean Distance of qualitified flavor between whiskies </li>
 </ul>
-<br>
+
 If sorted by the physical distance between distilleries, the application calculates the euclidean distance of latitude and longitude of the distilleries.
-<br>
+<br><br>
 If sorted by the Euclidean distance of qualitified flavor between whiskies, the application calculates the euclidean of the 12 characters and flavor of the whiskies.
-<br>
-The code in here will be defaulted to sort by the the Euclidean distance of qualitified flavor between whiskies. If you prefer another, comment out the block of the current method and uncomment another block of codes.
+<br><br>
+The code in the <i>Developer Version</i> in here will be defaulted to sort by the the Euclidean distance of qualitified flavor between whiskies. If you prefer another, comment out the block of the current method and uncomment another block of codes. This code block is deleted in the <i>GUI</i> versions.
 
 ### Case 2: The consumer does not know any whisky but he/she knows what flavor he/she likes.
 In this case, our goal is to figure out what whisky fits best to the consumer's preference. The application would list all the features we have in the data set and ask the consumer to pick one and score between 1–4 (Cannot pick 0), which the score represents: Light, Medium, Strong, and Very Strong.
-<br>
+<br><br>
 Once the consumer has picked and scored the features, the application use pandas to filter the list of whiskies that meets the criteria and sorted by alphabetical order. The whiskies do not cluster into the same group. The goal is to have a list of whiskies that meets the consumer's expectation from what he/she has picked. 
-<br>
+<br><br>
 If there is no whisky meets the criteria, the application score down the strength until there is at least one whisky is generated in a list. The reason I score down because the assumption is that people are more likely to accept lighter flavor than heavier flavor.
 
 ### Case 3: The consumer does not know anything.
 If the person has no idea where to start, we would recommend a whisky which is well-known to non-whisky drinker and does not contain very aggressive flavor. Macallan is a well-known single-malt whisky which gives more confidence to whisky beginners. Secordly, it is not peaty nor having an aggressive flavor. Thirdly, it provides a fruity and sweet texture to drinkers that whisky beginners are more likely to accept.
-<br>
+<br><br>
 Based on these reasons, the application recommends Macallan if there is no a lot of input.
 
 ## How it works
@@ -76,12 +76,12 @@ This is the first GUI version, which is written in Python. It is a upgraded vers
 	</li>
 	<li>pydata - The folder for the collection of scripts on loading data and convert to the required format for the application
 		<ul>
-			<li></li>
+			<li>load_data.py - Load Data</li>
 		</ul>
 	</li>
 	<li>whisky_with_cluster.csv - CSV file with assigned group</li>
 </ul>
-<br><br>
+
 To run the application in this version, you may execute the following code on command line:
 
 ```
@@ -98,11 +98,11 @@ If the user enters the distillery name, the application will find the whisky bra
 <br>
 <img src="../Images/method1b.png">
 <br>
-Developer Version
+<i>Developer Version</i>
 
 <img src="../Images/gui1b.png">
 <br>
-GUI
+<i>GUI</i>
 <br><br>
 For example, if we enter “Bowmore”, the list will be sorted by Highland Park, Springbank…etc, because the Euclidean distance of the flavor and characters between Bowmore and Highland Park is the shortest, followed by Springbank. This a better approach as the list is sorted by the content of the whiskies.
 
@@ -112,11 +112,11 @@ If the user does not know any whisky but he/she knows what flavor he/she likes, 
 <br>
 <img src="../Images/method2.png">
 <br>
-Developer Version
+<i>Developer Version</i>
 
 <img src="../Images/gui2.png">
 <br>
-GUI
+<i>GUI</i>
 <br><br>
 Once the list is generated, the list of whisky is sorted by alphabetical order and the whiskies do not belong to the same cluster. it requires the work between the recommender and consumers to figure out which whisky consumers like by the recommender’s domain expertise. However, the application makes the recommender’s life easier because the application has filtered to a smaller list from a larger pool of choices. The goal is to find the very first whisky the user likes the most first. Once the first whiksy is figured out, we can recommend a similar whisky from the first whisky.
 
@@ -125,11 +125,11 @@ As we have discussed Cold Start Problem, if the consumer has no idea on whisky n
 <br>
 <img src="../Images/method3.png">
 <br>
-Developer Version
+<i>Developer Version</i>
 
 <img src="../Images/gui3.png">
 <br>
-GUI
+<i>GUI</i>
 <br><br>
 Note: If you choose option 3 in GUI, the recommendation would be showed in a pop-up message box, instead of the window.
 
