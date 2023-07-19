@@ -1,18 +1,16 @@
 # Application
 
 Once we have determined K Mean Model where K = 6 is the best model. The application would use such hyperparameter to build the model with K mean algorithm with Python and Scikit-learn.
-<br>
-Before building the model, there is a concern on Cold Start Problem.
+<br><br>
+<b>You may refer to the <i>How it Works</i> section to start using the application!</b>
 
 ## Cold Start Problem
-There are 3 situtation we have to consider for this application:
+Before building the application, there is a concern on Cold Start Problem. There are 3 situtation we have to consider for this application:
 <ul>
 	<li>The consumer has his/her favorite whisky and wants to find a similar one.</li>
 	<li>The consumer does not know any whisky but he/she knows what flavor he/she likes.</li>
 	<li>The consumer does not know anything.</li>
 </ul>
-<br>
-<br>
 
 ### Case 1: The consumer has his/her favorite whisky and wants to find a similar one.
 In this case, we simply recommend a whisky very similar to the whisky consumer likes. The application would return a list of whiskies in the same group. There are 2 approaches of how the list is sorted.
@@ -40,20 +38,72 @@ If the person has no idea where to start, we would recommend a whisky which is w
 Based on these reasons, the application recommends Macallan if there is no a lot of input.
 
 ## How it works
+The application originally was written in <i>Developer Version</i>, then the GUI version written in Python and Ruby (Coming soon) were released afterward.
+
+
+### Developer Version
+Developer Version is the application that interacts on command line, which is a simple version of the application that only interests to developers (Who do not mind reading from commmand line).
+<br><br>
 There is 2 code files and 1 csv file required.
 <ul>
-	<li> whisky_recommender.py - The UI file in Python</li>
-	<li> script.py - The Python file prints the options for users</li>
+	<li>whisky_recommender.py - The UI file in Python</li>
+	<li>script - The folder for the collection of scripts on the backend of the application
+		<ul>
+			<li>script.py - The Python file prints the options for users</li>
+		</ul>
+	</li>
 	<li> whisky_with_cluster.csv - CSV file with assigned group</li>
 </ul>
 <br>
 First, you need to have use <a href="../Clusters/whisky_recommendation.py">whisky_recommendation.py file</a> to assign each distillery to a group and save to whisky_with_cluster.csv (So that, it does not require the application to train the model every time it runs). Then, run whisky_recommender.py. It will ask which method to recommend whisky, by entering distillery name, selecting flavor and its strength, or input nothing (That represents the 3 cases discussed in last section).
+<br><br>
+To run the application in this version, you may execute the following code on command line:
 
+```
+python whisky_recommender.py
+```
+
+### Python GUI
+This is the first GUI version, which is written in Python. It is a upgraded version of the <i>Developer Version</i> and allow users to interact the application with GUI. Here are the code files for this version:
+
+<ul>
+	<li>pygui_whisky_recommender.py - The Driver script that initiate the application</li>
+	<li>pygui - The folder for the collection of scripts on the backend of the application
+		<ul>
+			<li>gui_helper.py - Populate GUI and the functions to allow users to interact with the application</li>
+			<li>recommendation.py - Take user's input and generate a list of recommendated whiskies to users</li>
+		</ul>
+	</li>
+	<li>pydata - The folder for the collection of scripts on loading data and convert to the required format for the application
+		<ul>
+			<li></li>
+		</ul>
+	</li>
+	<li>whisky_with_cluster.csv - CSV file with assigned group</li>
+</ul>
+<br><br>
+To run the application in this version, you may execute the following code on command line:
+
+```
+python pygui_whisky_recommender.py
+```
+
+### Ruby GUI
+Coming soon...
+
+
+## Features
 ### Option 1: Entering whisky name
 If the user enters the distillery name, the application will find the whisky brands have the similar character/flavor, sorted by the similarity. The similarity is calculated by the Euclidean distance of the quantified flavor and characters (The norm of the two whisky’s flavor and characters).
 <br>
 <img src="../Images/method1b.png">
 <br>
+Developer Version
+
+<img src="../Images/gui1b.png">
+<br>
+GUI
+<br><br>
 For example, if we enter “Bowmore”, the list will be sorted by Highland Park, Springbank…etc, because the Euclidean distance of the flavor and characters between Bowmore and Highland Park is the shortest, followed by Springbank. This a better approach as the list is sorted by the content of the whiskies.
 
 
@@ -62,12 +112,26 @@ If the user does not know any whisky but he/she knows what flavor he/she likes, 
 <br>
 <img src="../Images/method2.png">
 <br>
+Developer Version
+
+<img src="../Images/gui2.png">
+<br>
+GUI
+<br><br>
 Once the list is generated, the list of whisky is sorted by alphabetical order and the whiskies do not belong to the same cluster. it requires the work between the recommender and consumers to figure out which whisky consumers like by the recommender’s domain expertise. However, the application makes the recommender’s life easier because the application has filtered to a smaller list from a larger pool of choices. The goal is to find the very first whisky the user likes the most first. Once the first whiksy is figured out, we can recommend a similar whisky from the first whisky.
 
 ### Option 3: No idea where to start
 As we have discussed Cold Start Problem, if the consumer has no idea on whisky nor picking a flavor, recommend Macallan.
 <br>
 <img src="../Images/method3.png">
+<br>
+Developer Version
+
+<img src="../Images/gui3.png">
+<br>
+GUI
+<br><br>
+Note: If you choose option 3 in GUI, the recommendation would be showed in a pop-up message box, instead of the window.
 
 ## The Drawback and Thought to this Model/Application
 1. One observation for each distillery, it does not recommend which label among all products within one distillery. For example, if the application recommends Laphroaig, it does not tell you whether the user should get 10 Years, Lore, or other label.<br>
