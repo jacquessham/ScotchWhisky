@@ -69,3 +69,7 @@ You may find the codes and the captures in the <a href="https://github.com/jacqu
 
 ## Report
 In the [Report folder](Report), there is a report of going over how the recommendation system is built by choosing the best model from Region Classification, Dendrogram, and K-means Clustering.
+
+
+## Whisky Analysis by Lapointe and Legendre
+In the [Lapointe et Legendre folder](lapointe_et_legendre), we are going to revisit Lapointe and Legendre's paper <i>A classification of pure malt Scotch whiskies</i>. Coming soon...
