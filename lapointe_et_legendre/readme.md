@@ -2,7 +2,7 @@
 Coming soon...
 
 ## Data
-<a href="http://www.numericalecology.com/labo/Scotch/ScotchData.zip">link</a>
+The original data provided by Lapointe and Legendre can be downloaded at this <a href="http://www.numericalecology.com/labo/Scotch/ScotchData.zip">link</a>, and can be found in the <i>Original Data</i> folder in the [Data](/Data) folder. The original data is saved into multiple files, and the aggregated version may be found in the [Data](/Data) folder.
 
 ## R
 Folder link: [R](R)

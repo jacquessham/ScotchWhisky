@@ -1,0 +1,7 @@
+{
+	"color":["wyne","yellow","v.pale","pale","p.gold","gold","o.gold","f.gold","bronze","p.amber","amber","f.amber","red","sherry"],
+	"nose":["aroma","peat","sweet","light","fresh","dry","fruit","grass","sea","sherry","spicy","rich"],
+	"body":["soft","med","full","round","smooth","light","firm","oily"],
+	"palate":["full","dry","sherry","big","light","smooth","clean","fruit","grass","smoke","sweet","spice","oil","salt","arome"],
+	"finish":["full","dry","warm","big","light","smooth","clean","fruit","grass","smoke","sweet","spice","oil","salt","arome","ling","long","very","quick"]
+}
