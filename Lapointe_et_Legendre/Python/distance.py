@@ -2,11 +2,14 @@ import pandas as pd
 import numpy as np
 
 
+# Read Data of Whisky characteristics
 df = pd.read_csv('../Data/Transformation/whisky_characters.csv')
 
+# np.zero for final distance deliverable
 num_distilleries = len(df)
 distance = np.zeros(shape=(num_distilleries, num_distilleries))
 
+# Do the calculation
 for i in range(num_distilleries):
 	for j in range(1, num_distilleries):
 		if i != j:
