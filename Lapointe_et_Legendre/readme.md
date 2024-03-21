@@ -22,7 +22,7 @@ For example:<br>
 Given Bunnahabhain has a descriptors:
 <ul>
 	<li>Color: Gold</li>
-	<li>Nose: Firm, light, smooth</li>
+	<li>Nose: Firm, med, smooth</li>
 	<li>Body: Sweet, fruit, clean</li>
 	<li>Palate: Fresh, sea</li>
 	<li>Finish: Full</li>
@@ -38,8 +38,26 @@ And given Tullibardine has a descriptors:
 	<li>Finish: None</li>
 </ul>
 
-The calculation would be:<br>
-Coming soon...
+The calculation of the characteristc distance between 2 whiskies would be taken by the following steps:
+<ol>
+	<li>Calculate the coefficient for each feature type:
+		<ul>
+			<li>Use the total number of characteristics in each feature type and plug it as the denominator</li>
+			<li>Find the numbers of characteristics that can be found in either whisky and plug it as numerator</li>
+			<li>For example, if we calculate the distance between Bunnahabhain and Tullibardine: The coefficient used for Nose is 4/12 - Because there are 4 characters can be found in either whiskies (Firm, med, light, smooth. If the character is mutually found in both whiskies, it counts as 1) and 19 characters available in the Nose feature type. Likewise, Color is 1/19; Body is 4/8; Palate is 3/15; Finish is 1/19</li>
+		</ul>
+	</li>
+	<li>Calculate the Euclidean distance:
+		<ul>
+			<li>Calculate the weight characteristic similarities for each characteristic. Take the difference between two whiskies on each characteristic, then square it and times it with the coefficient</li>
+			<li>Sum all the weight characteristics similarities obtained from the last step</li>
+			<li>Sum the weighted coefficients by the number of mutual characters in each feature type. Sum all weighted coefficients</li>
+			<li>Divide Step 2 by Step 3</li>
+			<li>Square root of Step 4</li>
+		</ul>
+	</li>
+</ol>
+
 
 
 ## R
