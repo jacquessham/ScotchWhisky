@@ -46,7 +46,7 @@ def calculate_distance(row_i, row_j, i2col_type, char_num, char_types):
 		domin += coeff[char_type]['coeff_sum']
 
 	# Return the calculation
-	return nomin/domin
+	return (nomin/domin)**0.5
 
 
 # Read Data of Whisky characteristics
@@ -95,6 +95,6 @@ for i in range(num_distilleries):
 			distance[i][j] = curr_dis
 			distance[j][i] = curr_dis
 
-print(distance)
+# print(distance)
 
 np.savetxt('adj_distance.txt', distance, delimiter='\t', fmt='%f')
