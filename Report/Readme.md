@@ -140,7 +140,20 @@ Here is the statistics on the numbers of distilleries in each cluster when K is 
 Based on the bar charts, the variance of numbers of distilleries among clusters is the lowest when K=6, also, the maximum of numbers of cluster group is the lowest. And therefore, K=6 is the best hyperparameter in Kmean for this dataset. 
 <br>
 The result looks like this:
-<br>
+
+<ul>
+	<li>Group 1: Aberfeldy, Aberlour, Anchroisk, BenNevis, Benrinnes, Benromach, BlairAthol, Craigallechie, Deanston, Edradour, Glenfarclas, Glenlivet, Glenturret, Knochando, Longmorn, Old Fettercairn, Scapa, Strathisla</li>
+	<li>Group 2: AnCnoc, Auchentoshan, Aultmore, Bunnahabhain, Cardhu, Craigganmore, Dalwhinnie, Dufftown, Glen Elgin, Glen Grant, Glen Keith, Glen Moray, Glenallachie, Glengoyne, Glenmorangie, Mannochmore, Miltonduff, Speyside, Strathmill, Tamdhu, Tamnavulin, Tobermory</li>
+	<li>Group 3: Ardbeg, Caol Illa, Clynelish, Lagavulin, Laphroaig, Talisker</li>
+	<li>Group 4: Arran, Belvenie, Benriach, Bladnoch, Glen Deveron Macduff, Glen Garioch, Glen Ord, Glen Spey, Glenfiddich, Glenkinchie, Glenlossie, Glenrothes, Inchgower, Linkwood, Royal Brackla, Speyburn, Teaninich, Tomatin, Tomintoul, Tullibardine</li>
+	<li>Group 5: Ardmore, Balblair, Bowmore, Bruichladdich, Glen Scotia, Highland Park, Isle of Jura, Loch Lomond, Oban, Old Pulteney, Springbank, Tormore</li>
+	<li>Group 6: Balmenach, Dailuaine, Dalmore, Glendronach, Glendullan, Macallan, Mortlach, Royal Lochnagar</li>
+</ul>
+
+
+
+<br><br>
+This is the screenshot of the result produced by the script displayed on the terminal:
 <img src="../Images/cluster_result.png">
 <br>
 <br>
@@ -163,4 +176,4 @@ The application will use K=6 to train a K Mean model. The are three ways to retu
 3. If nothing is entered, application suggests Macallan. (See the Application folder for explaination) 
 <br>
 <br>
-You may find the codes <a href="https://github.com/jacquessham/ScotchWhisky/tree/master/RecommendationApplication">here</a>
+You may find the application in the <a href="https://github.com/jacquessham/ScotchWhisky/tree/master/RecommendationApplication">Recommendation Application</a> folder.

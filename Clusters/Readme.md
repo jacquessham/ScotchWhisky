@@ -21,9 +21,21 @@ Technically, it is fine to pick one of the numbers between 4 and 6. However, we 
 On the bar charts produced by Visualization_ScottchClusting.twb, we found that when K=6, the model meets the requirement. Therefore, 6 is the optimal K.
 
 ## Prototype Model
-Once we have figured out K is 6, we can train the model with this hyperparameter. The file whisky_recommendation.py train this model and cluster distilleries into 6 groups. This file returns the result and saved in a text file. The result looks like this:
+Once we have figured out K is 6, we can train the model with this hyperparameter. The file whisky_recommendation.py train this model and cluster distilleries into 6 groups. Here is the result:
+
+<ul>
+	<li>Group 1: Aberfeldy, Aberlour, Anchroisk, BenNevis, Benrinnes, Benromach, BlairAthol, Craigallechie, Deanston, Edradour, Glenfarclas, Glenlivet, Glenturret, Knochando, Longmorn, Old Fettercairn, Scapa, Strathisla</li>
+	<li>Group 2: AnCnoc, Auchentoshan, Aultmore, Bunnahabhain, Cardhu, Craigganmore, Dalwhinnie, Dufftown, Glen Elgin, Glen Grant, Glen Keith, Glen Moray, Glenallachie, Glengoyne, Glenmorangie, Mannochmore, Miltonduff, Speyside, Strathmill, Tamdhu, Tamnavulin, Tobermory</li>
+	<li>Group 3: Ardbeg, Caol Illa, Clynelish, Lagavulin, Laphroaig, Talisker</li>
+	<li>Group 4: Arran, Belvenie, Benriach, Bladnoch, Glen Deveron Macduff, Glen Garioch, Glen Ord, Glen Spey, Glenfiddich, Glenkinchie, Glenlossie, Glenrothes, Inchgower, Linkwood, Royal Brackla, Speyburn, Teaninich, Tomatin, Tomintoul, Tullibardine</li>
+	<li>Group 5: Ardmore, Balblair, Bowmore, Bruichladdich, Glen Scotia, Highland Park, Isle of Jura, Loch Lomond, Oban, Old Pulteney, Springbank, Tormore</li>
+	<li>Group 6: Balmenach, Dailuaine, Dalmore, Glendronach, Glendullan, Macallan, Mortlach, Royal Lochnagar</li>
+</ul>
+
+<br><br>
+This file returns the result and saved in a text file. The result looks like this:
 <img src="../Images/cluster_result.png">
 <br><br>
 Or it looks like this on the map:
 <br>
-<img src="ClusteringDistilleries.jpg">
+<img src="../Images/ClusteringDistilleries.jpg">

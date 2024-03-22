@@ -19,7 +19,8 @@ Additionally to the original 86 rows by 12 columns data set, I added three more 
 	<li>Longitude in degree</li>
 	<li>Region (Region Classification of Whisky Distillery)</li>
 </ul>
-<br>
+
+<br><br>
 You may find the data set [here](Data/whisky.csv) or the detail of the data set [here](Data).
 
 ## Goal of this Project
@@ -40,11 +41,18 @@ This is the Python code for the <a href="Dendrogram/whisky_dendrogram.py">dendro
 ## Clustering
 The last approach is to cluster the similar distilleries by k-means. And here is the Python code [here](Clusters/whisky_clustering.py) The problem is find the best k for the algorithm.
 <br><br>
-You may go to the [Clusters folder](Clusters) to find out the process of how the recommendation system using k-means.
+You may go to the [Clusters folder](Clusters) to find out the process of how the recommendation system using k-means. Here is the result:
 <br>
-The result looks like this:
-<br>
-<img src="Images/cluster_result.png">
+
+<ul>
+	<li>Group 1: Aberfeldy, Aberlour, Anchroisk, BenNevis, Benrinnes, Benromach, BlairAthol, Craigallechie, Deanston, Edradour, Glenfarclas, Glenlivet, Glenturret, Knochando, Longmorn, Old Fettercairn, Scapa, Strathisla</li>
+	<li>Group 2: AnCnoc, Auchentoshan, Aultmore, Bunnahabhain, Cardhu, Craigganmore, Dalwhinnie, Dufftown, Glen Elgin, Glen Grant, Glen Keith, Glen Moray, Glenallachie, Glengoyne, Glenmorangie, Mannochmore, Miltonduff, Speyside, Strathmill, Tamdhu, Tamnavulin, Tobermory</li>
+	<li>Group 3: Ardbeg, Caol Illa, Clynelish, Lagavulin, Laphroaig, Talisker</li>
+	<li>Group 4: Arran, Belvenie, Benriach, Bladnoch, Glen Deveron Macduff, Glen Garioch, Glen Ord, Glen Spey, Glenfiddich, Glenkinchie, Glenlossie, Glenrothes, Inchgower, Linkwood, Royal Brackla, Speyburn, Teaninich, Tomatin, Tomintoul, Tullibardine</li>
+	<li>Group 5: Ardmore, Balblair, Bowmore, Bruichladdich, Glen Scotia, Highland Park, Isle of Jura, Loch Lomond, Oban, Old Pulteney, Springbank, Tormore</li>
+	<li>Group 6: Balmenach, Dailuaine, Dalmore, Glendronach, Glendullan, Macallan, Mortlach, Royal Lochnagar</li>
+</ul>
+
 <br><br>
 The result of the optimal clustering looks like this on the map:
 <br>
