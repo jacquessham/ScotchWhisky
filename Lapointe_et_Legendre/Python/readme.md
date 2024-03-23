@@ -8,11 +8,13 @@ In folder contains the program written in Python. This is the effort to replicat
 	<li><i>display_result.py</i>: Script to display the result calculated by <i>adj_distance.py</i></li>
 	<li><i>adj_distance.txt</i>: The result calculated by <i>adj_distance.py</i></li>
 	<li><i>distance.txt</i>: The result calculated by <i>distance.py</i></li>
-	<li><i>display_result.py</i>: (Coming soon...)</li>
+	<li><i>display_result.py</i>: Display result on the command line</li>
 </ul>
 
 ## Workflow
 ### distance.py
+This script calculates similarity with standard Euclidean distance formula.
+<br><br>
 The workflow of this script is:
 <ol>
 	<li>Load the whisky character score data</li>
@@ -21,6 +23,8 @@ The workflow of this script is:
 </ol>
 
 ### adj_distance.py
+This script calculates similarity with weighted Euclidean distance formula suggested by Lapointe and Legendre.
+<br><br>
 The workflow of this script is:
 <ol>
 	<li>Load the whisky character score data</li>
@@ -51,6 +55,15 @@ The workflow of <i>calculate_distance</i> function is:
 </ol>
 
 ### display_result.py
+This script allows users to interact the result on command line.
+<br><br>
+display_result.py relies on the following files:
+<ul>
+	<li><i>adj_distance.txt</i>: Result from <i>adj_distance.py</i></li>
+	<li><i>distillery.csv</i>: For displaying the name of the whiskies/distilleries</li>
+</ul>
+
+<br><br>
 Coming soon...
 
 ## Recommendation Application

@@ -22,8 +22,11 @@ def calculate_distance(row_i, row_j, i2col_type, char_num, char_types):
 	for char_type in char_types:
 		mutual_char = 0
 		for i in range(len(row_i)):
+			# If character appears in row_i
+			## It won't double count as mutual_char++ without checking row_j
 			if row_i[i] == 1 and i2col_type[i][1] == char_type:
 				mutual_char += 1
+			# If character appears in row_j
 			elif row_j[i] == 1 and i2col_type[i][1] == char_type:
 				mutual_char += 1
 		# Calculate the coeff and store other calculation
