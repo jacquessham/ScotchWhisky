@@ -53,7 +53,7 @@ The calculation of the characteristc distance between 2 whiskies would be taken 
 		<ul>
 			<li>Calculate the weight characteristic similarities for each characteristic. Take the difference between two whiskies on each characteristic, then square it and times it with the coefficient</li>
 			<li>Sum all the weight characteristics similarities obtained from the last step</li>
-			<li>Sum the weighted coefficients by the number of mutual characters in each feature type. Sum all weighted coefficients</li>
+			<li>Sum the weighted coefficients by the number of characters in each feature type. Sum all weighted coefficients summation across the all feature type. In our example, it becomes 4/12*12 + 1/19*19 + 4/8*8 + 3/15*15 + 1/19*19</li>
 			<li>Divide Step 2 by Step 3</li>
 			<li>Square root of Step 4</li>
 		</ul>
