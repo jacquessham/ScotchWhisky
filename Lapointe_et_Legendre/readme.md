@@ -6,10 +6,12 @@ After reading the paper written by Lapointe and Legendre, it inspires many whisk
 The original data provided by Lapointe and Legendre can be downloaded at this <a href="http://www.numericalecology.com/labo/Scotch/ScotchData.zip">link</a>, and can be found in the <i>Original Data</i> folder in the [Data](/Data) folder. The original data is saved into multiple files, and the aggregated version may be found in the [Data](/Data) folder.
 
 ## Algorithm Suggested by Lapointe and Legendre
-Instead of computing the similiarity among distilleries, Lapointe and Legendre suggested that the boarder feature types are also as important as the individual character:
+The algorithm of finding the similarity between 2 whiskies is simply finding the Euclidean distance of the whiskies. However, Lapointe and Legendre suggested that the standard Euclidean distance weighted unequally on every feature type. Instead of computing the similiarity among distilleries, Lapointe and Legendre suggested that the boarder feature types are also as important as the individual character:
 
 ```
-When computing the similarities, each of the five feature types was given the same importance. To achieve this, the characteristics were weighted by the inverse of the number of characteristic in their type.
+When computing the similarities, each of the five feature types was given the same importance. 
+To achieve this, the characteristics were weighted by 
+the inverse of the number of characteristic in their type.
 ```
 
 <br>
@@ -66,7 +68,15 @@ Folder link: [R](R)
 Coming soon...
 
 ## Python
+Here is the folder for the Python scripts and the supporting documentation. And you may also find the recommendation application with this approach in this folder as well.
+<br>
+
 Folder link: [Python](Python)
+
+## Glossary
+<ul>
+	<li>Feature type: There are 5 general whisky attributes - Color, Nose, Body, Palate, Finish. Each whisky character is classified into one of those 5 groups</li>
+</ul>
 
 
 ## Reference

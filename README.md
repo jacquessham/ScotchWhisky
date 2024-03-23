@@ -72,4 +72,4 @@ In the [Report folder](Report), there is a report of going over how the recommen
 
 
 ## Whisky Analysis by Lapointe and Legendre
-In the [Lapointe et Legendre folder](Lapointe_et_Legendre), we are going to revisit Lapointe and Legendre's paper <i>A classification of pure malt Scotch whiskies</i>. Coming soon...
+In the [Lapointe et Legendre folder](Lapointe_et_Legendre), we are going to revisit the clusting approach with the algorithm suggested by Lapointe and Legendre's paper <i>A classification of pure malt Scotch whiskies</i>. Our goal is to improve the recommendation application.
