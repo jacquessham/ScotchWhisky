@@ -30,8 +30,8 @@ def calculate_distance(row_i, row_j, i2col_type, char_num, char_types):
 		coeff[char_type] = {
 			'mutual_char': mutual_char,
 			'coeff': mutual_char/char_num[char_type],
-			# Use for dominator calculation
-			'coeff_sum': mutual_char * (mutual_char/char_num[char_type])
+			# Use for dominator calculation, for rescaling the coeff
+			'coeff_sum': char_num[char_type] * (mutual_char/char_num[char_type])
 
 			}
 	# Assign coeff to every entry
