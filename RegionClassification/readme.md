@@ -31,3 +31,9 @@ This file is trying to find out which algorithm is able to train a recommendatio
 
 ## whisky_clf.py
 This file is the best model among all models and is written to test the result of identifing the regions for all whiskies in the data set. The models takes all quantified characters and flavor as features. The code filters the distilleries with wrongly labeled region to csv file which will be visualized in Whisky_WrongLabel.twb.
+
+
+## Result
+<img src="../Images/WhiskyRegion_wronglabel.jpg">
+
+The result of region classification is disappointing: The best model only achieves 58% of accuracy. And plenty of the distilleries classification was wrong if you compare the result with the right labels.

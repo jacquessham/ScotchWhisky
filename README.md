@@ -23,19 +23,33 @@ Additionally to the original 86 rows by 12 columns data set, I added three more 
 <br><br>
 You may find the dataset [here](Data/whisky.csv) or the documentation of the dataset in the [Data](Data) folder.
 
+<br><br>
+Here is the map of distilleries location with region classification.
+<img src=Images/WhiskyRegion_correctlabel.jpg>
+
 ## Goal of this Project
 The goal of this project is to build a content-based recommendation system for whiskies. It means recommending a whisky based on the similarity between two whiskies. There are more than 86 brands of Scotch whisky and I want a model/system to recommend other brands based on the characters and flavor.
 
 ## Region Classification
 The first approach is to classify which Whisky Region the whisky distilleries are classified. The idea is that each region has its general flavor and characters of the whiskies. The assumption is that a person who likes one highland whisky, I will recommend other highland whisky to that person. The plan of this approach is that once we have trained with a model from 86 distilleries, we can classify the region of the 87th whisky distillery from the model.
 <br><br>
+
 The detail of the code may be found in the [Region Classification Folder](RegionClassification)
+
+<img src="Images/WhiskyRegion_wronglabel.jpg">
 <br><br>
 However, the result of the classification model does not meet expectation. So, the second step is train the model in hierarchical clustering.
 
 ## Dendrogram
 Second approach is to use dendrogram to display the hierarchical relationship among distilleries. Dendrogram is one of the algorithms in hierarchical clustering. The idea is to use the quantified characters and flavor to calculate the similiarity of distilleries.
+
 <br><br>
+<img src=Images/whisky_dendrogram.png>
+
+<br><br>
+However, the dendrogram is hard to find similarity among whiskies and interpret. Also, it is hard to train the salesmen to read the dendrogram when they make any recommendation.
+<br><br>
+
 This is the Python code for the <a href="Dendrogram/whisky_dendrogram.py">dendrogram</a> or the [Dendrogram Folder](Dendrogram)
 
 ## Clustering
