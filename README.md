@@ -21,7 +21,7 @@ Additionally to the original 86 rows by 12 columns data set, I added three more 
 </ul>
 
 <br><br>
-You may find the data set [here](Data/whisky.csv) or the detail of the data set [here](Data).
+You may find the dataset [here](Data/whisky.csv) or the documentation of the dataset in the [Data](Data) folder.
 
 ## Goal of this Project
 The goal of this project is to build a content-based recommendation system for whiskies. It means recommending a whisky based on the similarity between two whiskies. There are more than 86 brands of Scotch whisky and I want a model/system to recommend other brands based on the characters and flavor.
@@ -61,19 +61,34 @@ The result of the optimal clustering looks like this on the map:
 The model using the k-means algorithm is useful for recommendating Scotch Whisky. So I decided to use k-mean, with k=6, to build the recommendation system.
 
 ## Application
-The application will use K=6 to train a K Mean model. The are three ways to return a list of recommendation:
+The application will use the k-means algorithm model, while K=6 to train a K Mean model, to calculate the recommendation quantitatively. The are three ways to return a list of recommendation:
 <ul>
 	<li>Enter a whisky distillery name</li>
 	<li>Choose from a list of characters and flavors</li>
 	<li>Nothing</li>
 </ul>
+
 <br>
-1. If we enter a whisky distillery name, the application return a list of whiskies within the same cluster. The list of whiskies are sorted by the flavor similarity<br>
-2. If we choose from a list of character and flavors, the application return a list of whiskies that meets the criteria. Note that the whiskies on the list do not belong the same cluster.<br>
-3. If nothing is entered, application suggests Macallan. (See the Application folder for explaination) 
+<ol>
+	<li>If we enter a whisky distillery name, the application return a list of whiskies within the same cluster. The list of whiskies are sorted by the flavor similarity</li>
+	<li>If we choose from a list of character and flavors, the application return a list of whiskies that meets the criteria. Note that the whiskies on the list do not belong the same cluster.</li>
+	<li>If nothing is entered, application suggests Macallan. (See the Application folder for explaination)</li>
+</ol>
+
 <br>
-<br>
+The application may be run on command line for developer or on a user-friendly GUI.
+<img src=Images/method2.png>
+<img src=Images/gui2.png>
+
+<br><br>
 You may find the codes and the captures in the <a href="https://github.com/jacquessham/ScotchWhisky/tree/master/RecommendationApplication">RecommendationApplication</a>
 
 ## Report
 In the [Report folder](Report), there is a report of going over how the recommendation system is built by choosing the best model from Region Classification, Dendrogram, and K-means Clustering.
+
+## Glossary
+<ul>
+	<li>Whisky means life of water in Gaelic</li>
+	<li><b>Whisky or Whiskey?</b> Whisky is the spelling used in Scotch whiskies, while whiskey is commonly spelled in Irish whiskeys. This repository will spell whisky for Scotch whiskies and whiskies produced with Scotch whiskies School of Thought, such as Japanese, Taiwanese whiskies, and whiskeys for Irish and American whiskeys.</li>
+	<li>The pural form of whisky and whiskey are whiskies and whiskeys, respectively</li>
+</ul>
