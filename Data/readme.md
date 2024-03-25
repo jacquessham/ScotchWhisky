@@ -34,4 +34,5 @@ Note: The original data set contains latitude and longitude in UTM that I found 
 The Whisky distilleries are labeled like this:
 <img src="../Images/WhiskyRegion_correctlabel.jpg">
 <br><br>
+
 You may find the [data set](whisky.csv) here.
