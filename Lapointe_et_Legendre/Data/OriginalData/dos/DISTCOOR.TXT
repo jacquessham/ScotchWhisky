@@ -1,0 +1,116 @@
+Geographic coordinates of the distilleries are given as decimal degrees:
+longitude WEST, followed by latitude NORTH. In Scotland, one degree north 
+is about 1.87 times as long as one degree west.
+
+There are two whiskies in the classification from the Springbank distillery.
+One pertains to the Islay group, the other to the Western group.
+
+Aberfeldy       3.875   56.62
+Aberlour        3.22    57.46
+Ardberg         6.08    55.64
+Ardmore         2.67    57.32
+Auchentoshan    4.39    55.91
+Aultmore        3.01    57.60
+Balblair        4.17    57.83
+Balmenach       3.13    57.42
+Balvenie        3.10    57.45
+Banff           2.51    57.65
+Ben Nevis       5.08    56.79
+Benriach        3.24    57.59
+Benrinnes       3.24    57.43
+Benromach       3.60    57.60
+Bladnoch        4.44    54.86
+Blair Athol     3.74    56.72
+Bowmore         6.28    55.75
+Brackla         3.93    57.52
+Bruichladdich   6.36    55.77
+Bunnahabhain    6.14    55.89
+Caol Ila        6.12    55.85
+Caperdonich     3.19    57.53
+Cardhu          3.33    57.46
+Clynelish       3.87    58.00
+Coleburn        3.21    57.55
+Convalmore      3.12    57.46
+Cragganmore     3.38    57.40
+Craigellachie   3.19    57.48
+Dailuaine       3.26    57.45
+Dallas Dhu      3.47    57.55
+Dalmore         4.17    57.70
+Dalwhinnie      4.23    56.93
+Deanston        4.04    56.28
+Dufftown        3.13    57.44
+Edradour        3.72    56.71
+Fettercairn     2.59    56.86
+Glen  Albyn     4.24    57.47
+Glenallachie    3.22    57.45
+Glenburgie      3.49    57.63
+Glencadam       2.74    56.70
+Glen Deveron    2.47    57.66
+Glendronach     2.67    57.45
+Glendullan      3.11    57.45
+Glen Elgin      3.24    57.55
+Glenesk         2.67    56.73
+Glenfarclas     3.30    57.43
+Glenfiddich     3.11    57.45
+Glen Garioch    2.29    57.34
+Glenglassaugh   2.68    57.68
+Glengoyne       4.12    56.07
+Glen Grant      3.24    57.54
+Glen Keith      2.95    57.52
+Glenkinchie     2.95    55.94
+Glenlivet       3.33    57.36
+Glenlochy       5.12    56.86
+Glenlossie      3.29    57.56
+Glen Mhor       4.26    57.39
+Glenmorangie    4.02    57.81
+Glen Moray      3.32    57.64
+Glen Ordie      4.45    57.52
+Glenrothes      3.22    57.51
+Glen Scotia     5.60    55.41
+Glen Spey       3.19    57.51
+Glentauchers    2.95    57.33
+Glenturret      3.84    56.38
+Glenugie        1.80    57.49
+Glenury Royal   2.22    56.97
+Highland Park   2.96    58.98
+Imperial        3.30    57.45
+Inchgower       2.98    57.67
+Inchmurrin      4.59    55.99
+Inverleven      4.61    55.95
+Jura            5.94    55.84
+Kinclaith       4.39    55.80
+Knockando       3.33    57.45
+Knockdhu        2.74    57.56
+Ladyburn        4.96    55.125
+Lagavulin       6.10    55.63
+Laphroaig       6.12    55.63
+Linkwood        3.24    57.61
+Littlemill      4.55    55.94
+Lochnagar       3.20    57.04
+Lochside        2.51    56.74
+Longmorn        3.24    57.56
+Macallan        3.21    57.50
+Millburn        4.14    57.43
+Miltonduff      3.37    57.66
+Mortlach        3.11    57.44
+North Port      2.47    56.71
+Oban            5.47    56.77
+Port Ellen      6.18    55.63
+Pulteney        3.11    58.43
+Rosebank        3.80    56.00
+Saint Magdalene 3.61    55.97
+Scapa           2.96    58.95
+Singleton       3.06    57.55
+Speyburn        3.17    57.54
+Springbank      5.60    55.41
+Springbank-Longrow  5.60    55.41
+Strathisla      2.96    57.56
+Talisker        6.35    57.29
+Tamdhu          3.34    57.46
+Tamnavulin      3.32    57.31
+Teaninich       4.28    57.68
+Tobermory       6.08    56.61
+Tomatin         3.99    57.33
+Tomintoul       3.38    57.25
+Tormore         3.41    57.38
+Tullibardine    3.78    56.25

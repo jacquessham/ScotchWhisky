@@ -100,9 +100,13 @@ You may find the codes and the captures in the <a href="https://github.com/jacqu
 ## Report
 In the [Report folder](Report), there is a report of going over how the recommendation system is built by choosing the best model from Region Classification, Dendrogram, and K-means Clustering.
 
+## Whisky Analysis by Lapointe and Legendre
+In the [Lapointe et Legendre folder](Lapointe_et_Legendre), we are going to revisit the clusting approach with the algorithm suggested by Lapointe and Legendre's paper <i>A classification of pure malt Scotch whiskies</i>. Our goal is to improve the recommendation application.
+
 ## Glossary
 <ul>
 	<li>Whisky means life of water in Gaelic</li>
 	<li><b>Whisky or Whiskey?</b> Whisky is the spelling used in Scotch whiskies, while whiskey is commonly spelled in Irish whiskeys. This repository will spell whisky for Scotch whiskies and whiskies produced with Scotch whiskies School of Thought, such as Japanese, Taiwanese whiskies, and whiskeys for Irish and American whiskeys.</li>
 	<li>The pural form of whisky and whiskey are whiskies and whiskeys, respectively</li>
 </ul>
+
