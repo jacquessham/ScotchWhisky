@@ -54,18 +54,55 @@ The workflow of <i>calculate_distance</i> function is:
 	<li>Return the Eclidean distance</li>
 </ol>
 
-### display_result.py
+
+### recommedation_developer.py
 This script allows users to interact the result on command line.
 <br><br>
-display_result.py relies on the following files:
+<i>recommedation_developer.py</i> relies on the following files:
 <ul>
 	<li><i>adj_distance.txt</i>: Result from <i>adj_distance.py</i></li>
 	<li><i>distillery.csv</i>: For displaying the name of the whiskies/distilleries</li>
 </ul>
 
+<br>
+Once the script is run, it will enter the homepage: The user may either pick a whisky for to start the recommendation or has the program pick something for him. Then, the program will return the Top 5 most similar whiskies in order along with the distillery names. If the user wish to continue for another recommendation, it will bring the user back to homepage, otherwise, the program will end. 
 <br><br>
-Coming soon...
+This script has a developer mode, it allows users to look at the distance between the two selected whiskies and display the number of recommendation the users wish to display. To enable developer mode, add an arguement <b>dev</b> when execute the script on command line.
+
 
 ## Recommendation Application
+### Developer Version
+In order to run the recommendation application in developer mode, execute this on the command line:
+
+```
+python recommendation_developer.py
+```
+
+Then, the program will bring ther users to the homepage, where the users can pick a whisky for to start the recommendation or has the program pick something for the users.
+<br><br>
+If the users decided to pick a whisky for recommendations, the program will list the whisky list available and have the user to select from the list.
+
+<img src="../../Images/recom_lapointe_prod_whiskylist.png">
+
+<br>
+Once the users have selected, the program will return the top 5 whiskies that is the most similar to the user selected whisky.
+<br><br>
+If the users have no idea where to start and have the program pick something for them, the program will recommend McCallan for the users and show the top 5 whiskes that is the most similar to McCallan.
+<br><br>
+In either case, the program will ask if the users wish to repeat and end the program.
+
+<br><br>
+If the users are interested in the similarity score (Characters distance) among whiskies, or to thave the program return more than or less than 5 whiskies in the recommendation list, the users may run the recommendation application in developer mode by execute:
+
+```
+python recommendation_developer.py dev
+```
+
+<br>
+The workflow of the program is the same but the program will ask for the number of recommendations to be returned and also display the similarity score in the recommendation like below:
+<img src="../../Images/recom_lapointe_dev_mccallan.png">
+
+
+### UI Version
 The plan of displaying the recommendation on an UI will be released in the next version.<br>
 Coming soon...

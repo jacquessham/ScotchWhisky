@@ -62,6 +62,7 @@ The calculation of the characteristc distance between 2 whiskies would be taken 
 
 
 
+
 ## R
 Folder link: [R](R)
 <br><br>
@@ -72,6 +73,33 @@ Here is the folder for the Python scripts and the supporting documentation. And 
 <br>
 
 Folder link: [Python](Python)
+
+## Result using Lapointe and Legendre's Algorithm
+Let's pick McCallan and compare the result with the result generated in the [Clusters](../Clusters) folder. The result of a McCallan looks like this:
+<img src="../Images/recom_lapointe_dev_mccallan.png">
+<br>
+When you compare the whiskies in Group 6 from the result:
+<ul>
+	<li>Balmenach</li>
+	<li><b>Dailuaine</b></li>
+	<li>Dalmore</li>
+	<li>Glendronach</li>
+	<li>Glendullan</li>
+	<li>Mortlach</li>
+	<li>Royal Lochnagar</li>
+</ul>
+<br>
+Note: <b>Bold</b> means whiskies recommended in both <i>k-Mean</i>(Algorithm used in Clusters folder) and <i>similarity distance</i>(Lapointe and Legendre's suggested algorithm).
+
+<br><br>
+You may find the results generated from both algorithms vary, there are two reason: 
+<ul>
+	<li>The algorithm used with simiarlity distance that the characteristics were weighted by the inverse of the number of characteristic in their type (k-Mean weighted each characteristic equally)</li>
+	<li>The dataset used between two folders are different</li>
+</ul>
+
+## Recommendation Application
+As mentioned in the previous section, you also find the recommendation application with this approach in the [Python](Python) folder. Note that it is only available in Python.
 
 ## Glossary
 <ul>
