@@ -24,7 +24,7 @@ The original dataset contains the following files:
 </ul>
 <br>
 
-The dataset package is saved in [Unix](Data/OriginalData/unix) and [Dos](Data/OriginalData/dos) format in two different folders. The dataset are the same. For the purpose of this project, we will convert the dataset to CSV format for convenience - This folder only serve the purpose of storing the data from this <a href="http://www.numericalecology.com/labo/Scotch/ScotchData.zip">link</a>.
+The dataset package is saved in [Unix](OriginalData/unix) and [Dos](OriginalData/dos) format in two different folders. The dataset are the same. For the purpose of this project, we will convert the dataset to CSV format for convenience - This folder only serve the purpose of storing the data from this <a href="http://www.numericalecology.com/labo/Scotch/ScotchData.zip">link</a>.
 
 ## Transformation
 In the [Transformation](Transformation) folder, you may find the scripts transforming the original data to the transformed data for the project, as well as the transformed data (Save as CSV files or any modern data format).
