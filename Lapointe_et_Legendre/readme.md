@@ -74,6 +74,9 @@ Here is the folder for the Python scripts and the supporting documentation. And 
 
 Folder link: [Python](Python)
 
+## Result from Standard Similarity Algorithm
+Coming soon...
+
 ## Result using Lapointe and Legendre's Algorithm
 Let's pick McCallan and compare the result with the result generated in the [Clusters](../Clusters) folder. The result of a McCallan looks like this:
 <img src="../Images/recom_lapointe_dev_mccallan.png">
@@ -97,6 +100,9 @@ You may find the results generated from both algorithms vary, there are two reas
 	<li>The algorithm used with simiarlity distance that the characteristics were weighted by the inverse of the number of characteristic in their type (k-Mean weighted each characteristic equally)</li>
 	<li>The dataset used between two folders are different</li>
 </ul>
+
+## Comparing the Results
+Coming soon...
 
 ## Recommendation Application
 As mentioned in the previous section, you also find the recommendation application with this approach in the [Python](Python) folder. Note that it is only available in Python.

@@ -1,5 +1,4 @@
 # Scotch Whisky Recommendation System
-
 This project is aimed to build a content-based recommendation system to help Scotch whisky salesmen to recommend Scotch Whisky to a customer based on the quantified quality of the Scotch whiskies. 
 <br><br>
 Please refer to [Report](/Report) to understand the process of how the recommendation system is built. Also, there is a Medium Post to talk about this project. If you would like to read the Medium post, you may refer to the <a href="https://towardsdatascience.com/recommending-scotch-whisky-ea440c2eb289">link</a>
@@ -95,13 +94,17 @@ The application may be run on command line for developer or on a user-friendly G
 <img src=Images/gui2.png>
 
 <br><br>
-You may find the codes and the captures in the <a href="https://github.com/jacquessham/ScotchWhisky/tree/master/RecommendationApplication">RecommendationApplication</a>
+You may find the recommendation application in this <a href="https://github.com/jacquessham/ScotchWhisky/tree/master/RecommendationApplication">folder</a>.
+<br><br>
+You may find the recommendation application using Lapointe and Legendre's algorithm in this [folder](/Lapointe_et_Legendre/Python).
 
 ## Report
 In the [Report folder](Report), there is a report of going over how the recommendation system is built by choosing the best model from Region Classification, Dendrogram, and K-means Clustering.
 
 ## Whisky Analysis by Lapointe and Legendre
 In the [Lapointe et Legendre folder](Lapointe_et_Legendre), we are going to revisit the clusting approach with the algorithm suggested by Lapointe and Legendre's paper <i>A classification of pure malt Scotch whiskies</i>. Our goal is to improve the recommendation application.
+<br><br>
+You may find the recommendation application using Lapointe and Legendre's algorithm in this [folder](/Lapointe_et_Legendre/Python).
 
 ## Glossary
 <ul>
