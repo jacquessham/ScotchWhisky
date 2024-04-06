@@ -98,6 +98,13 @@ If the users are interested in the similarity score (Characters distance) among 
 python recommendation_developer.py dev
 ```
 
+<br><br>
+If the users want to use the standard similarity distance, you may run the recommendation application in developer mode and enter <i>standard</i> to indicate the application using standard similarity distance, by execute:
+
+```
+python recommendation_developer.py dev standard
+```
+
 <br>
 The workflow of the program is the same but the program will ask for the number of recommendations to be returned and also display the similarity score in the recommendation like below:
 <img src="../../Images/recom_lapointe_dev_mccallan.png">

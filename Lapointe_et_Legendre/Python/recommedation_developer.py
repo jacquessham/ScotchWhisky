@@ -2,8 +2,18 @@ from sys import argv
 import numpy as np
 
 
-def load_data():
+def load_data(data='adjusted'):
 	# Read all files and prepare the data first
+	## To load distance trained with Lapointe and Legendre Algo
+	if data == 'adjusted':
+		filename = 'adj_distance.txt'
+	## To load original distance (Standard Similarity)
+	elif data == 'standard':
+		filename = 'distance.txt'
+	else:
+		print('Input invalid...using adj_distance.txt')
+		filename = 'adj_distance.txt'
+
 	## Prepare distillery names
 	with open('../Data/Transformation/distillery.csv') as f:
 		# Remove header, first entry will have index=0
@@ -15,7 +25,7 @@ def load_data():
 		num2dis[num] = dis
 
 	## Read the result
-	results = np.loadtxt('adj_distance.txt',dtype=float)
+	results = np.loadtxt(filename, dtype=float)
 
 	return results, dis2num, num2dis
 
@@ -129,19 +139,36 @@ def interact(results, dis2num, num2dis, dev_mode=False):
 		# Ask user if he wants to repeat the inquire again
 		repeat = repeat_or_not()
 
+def is_dev_mode(argv):
+	if argv[1].lower() == 'dev':
+		print('Entering developer mode...')
+		return True
+	print('Invalid input, entering in production mode...')
+	return False
+
 def main():
-	try:
-		if argv[1].lower() == 'dev':
-			print('Entering developer mode...')
-			dev_mode = True
-		else:
-			dev_mode = False
-	except:
-		# Avoid display the message when user intend to use production mode
-		if len(argv)>1:
-			print('Invalid input, entering in production mode...')
+	# Load adj_distance.txt or distance.txt
+	data = 'adjusted'
+	# When user did not enter any argument
+	if len(argv)-1 == 0:
 		dev_mode = False
-	results, dis2num, num2dis = load_data()
+	# When user only enter dev mode
+	elif len(argv)-1 == 1:
+		dev_mode = is_dev_mode(argv)
+	# When user enter dev mode and use standard data
+	elif len(argv)-1 == 2:
+		dev_mode = is_dev_mode(argv)
+		if dev_mode and argv[2] == 'standard':
+			print('Using Standard Similarity Data')
+			data = 'standard'
+		# When dev_mode is true but argv[2] input is invalid
+		elif dev_mode:
+			print(f'{argv[2]} is an invalid input, using adj_distance.txt')
+	else:
+		print('Invalid input, entering in production mode...')
+		dev_mode = False
+
+	results, dis2num, num2dis = load_data(data)
 	interact(results, dis2num, num2dis, dev_mode)
 
 main()

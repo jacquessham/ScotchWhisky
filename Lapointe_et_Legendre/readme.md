@@ -5,7 +5,10 @@ After reading the paper written by Lapointe and Legendre, it inspires many whisk
 ## Data
 The original data provided by Lapointe and Legendre can be downloaded at this <a href="http://www.numericalecology.com/labo/Scotch/ScotchData.zip">link</a>, and can be found in the <i>Original Data</i> folder in the [Data](/Data) folder. The original data is saved into multiple files, and the aggregated version may be found in the [Data](/Data) folder.
 
-## Algorithm Suggested by Lapointe and Legendre
+## Similarity Distance - Euclidean Distance (Standard Similarity Distance)
+The similarity distance is a similarity formula that is simply calculated by Euclidean distance. For each whisky-pair, find the squared distances among all characters between 2 whiskies and sum all of them. Take a square root of the summation. Repeat for all whisky-pairs.
+
+## Algorithm Suggested by Lapointe and Legendre (Lapointe and Legendre's Distance)
 The algorithm of finding the similarity between 2 whiskies is simply finding the Euclidean distance of the whiskies. However, Lapointe and Legendre suggested that the standard Euclidean distance weighted unequally on every feature type. Instead of computing the similiarity among distilleries, Lapointe and Legendre suggested that the boarder feature types are also as important as the individual character:
 
 ```
@@ -59,7 +62,8 @@ The calculation of the characteristc distance between 2 whiskies would be taken 
 		</ul>
 	</li>
 </ol>
-
+<br>
+Then, repeat for all whisky-pairs.
 
 
 
@@ -74,8 +78,16 @@ Here is the folder for the Python scripts and the supporting documentation. And 
 
 Folder link: [Python](Python)
 
-## Result from Standard Similarity Algorithm
-Coming soon...
+
+## Comparing the Results with Standard Similarity Algorithm
+If we pick McCallan with standard similarity distance, it will return this result:
+<img src="../Images/standard_dev_mccallan.png">
+<br>
+And to compare McCallan with Lapointe and Legendre's distance:
+<img src="../Images/recom_lapointe_dev_mccallan.png">
+<br>
+You may find there are 4 distilleries (Convalmore, Glencadam, Dallas Dhu, Glenfarclas) appeared in the same ranking in both modes, 3 distilleries (Ardmore, Millburn, Highland Park) ranked differently. By looking at those results, you may find the adjustment Lapointe and Legendre suggested improves the recommendation. For example, Singleton has similar flavours to McCallan. It did not make it to the standard similarity list, but Lapointe and Legendre's list. Highland Park is relatively peaty that is not as peaty as McCallan, it adjusted to a further rank in the Lapointe and Legendre's list.
+
 
 ## Result using Lapointe and Legendre's Algorithm
 Let's pick McCallan and compare the result with the result generated in the [Clusters](../Clusters) folder. The result of a McCallan looks like this:
@@ -100,9 +112,6 @@ You may find the results generated from both algorithms vary, there are two reas
 	<li>The algorithm used with simiarlity distance that the characteristics were weighted by the inverse of the number of characteristic in their type (k-Mean weighted each characteristic equally)</li>
 	<li>The dataset used between two folders are different</li>
 </ul>
-
-## Comparing the Results
-Coming soon...
 
 ## Recommendation Application
 As mentioned in the previous section, you also find the recommendation application with this approach in the [Python](Python) folder. Note that it is only available in Python.
