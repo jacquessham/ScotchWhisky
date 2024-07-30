@@ -146,7 +146,7 @@ def is_dev_mode(argv):
 	print('Invalid input, entering in production mode...')
 	return False
 
-def main():
+def main(gui=False):
 	# Load adj_distance.txt or distance.txt
 	data = 'adjusted'
 	# When user did not enter any argument
@@ -169,6 +169,6 @@ def main():
 		dev_mode = False
 
 	results, dis2num, num2dis = load_data(data)
+	if gui:
+		return results, dis2num, num2dis
 	interact(results, dis2num, num2dis, dev_mode)
-
-main()
