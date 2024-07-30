@@ -18,6 +18,44 @@ def clear_frame(frame):
 
 # Display Frontpage
 def display_frontpage():
+    # Helper function for frontpage actions
+    def frontpage_selection(event):
+    # display_frontpage core operations begins here
+        selection = frontpage_dropdown.get()
+        choice = int(selection[0])
+        clear_frame(frame_page2_input)
+
+        if choice == 1:
+            # Show instruction
+            # headline_secondchoice.config(
+            #     text='Please enter your favourite whisky:')
+            input_box = tk.Text(frame_page2_input, height=1, width=20,
+                                relief=RIDGE, borderwidth=5)
+            input_box.pack()
+
+            # Create children frames and function
+            # frame2_button_frame = tk.Frame(frame_page2_input)
+            frame3 = tk.Frame(frame_page2_input)
+            # frame2_button.pack()
+            # frame2_button_frame.pack()
+            frame3.pack()
+
+
+            # Delete later, temp message box
+            messagebox.showinfo(
+                title='Selection',
+                message=f"Feature coming soon!"
+            )
+
+
+        if choice == 2:
+            # headline_secondchoice.config(text='')
+            messagebox.showinfo(
+                title='Selection',
+                message=f"You may try MaCallan"
+            )
+
+
     # Define all base Frames
     frame_main = tk.Frame()
     frame_frontpage_question = tk.Frame()
@@ -42,7 +80,7 @@ def display_frontpage():
     frontpage_dropdown = create_dropdown(frame_frontpage_dropdown,
                                          frontpage_dropdown_menu)
     # Will come back later
-    # frontpage_dropdown.bind("<<ComboboxSelected>>", frontpage_selection)
+    frontpage_dropdown.bind("<<ComboboxSelected>>", frontpage_selection)
     frontpage_dropdown.pack()
 
     # Bind and Pack the changes
