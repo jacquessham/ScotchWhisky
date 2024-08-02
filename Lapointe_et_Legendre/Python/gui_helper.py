@@ -32,8 +32,9 @@ def plot_table(root, recommendations, num2dis):
         subframe_message.pack()
 
         # Show the table
-        subframe_recommention = tk.Frame(root)
+        subframe_recommendation = tk.Frame(root)
 
+        """
         for i in range(height):
             for j in range(4):
                 i_recommendation = i*4+j
@@ -42,7 +43,31 @@ def plot_table(root, recommendations, num2dis):
                     e.grid(row=i, column=j, sticky=NSEW)
                     e.insert(END, 
                         num2dis[recommendations[i_recommendation][0]])
-        subframe_recommention.pack()
+        """
+
+        for i in range(len(recommendations)+1):
+            if i == 0:
+                e0 = Entry(subframe_recommendation, relief=RIDGE)
+                e0.grid(row=i, column=0, sticky=NSEW)
+                e0.insert(END, 'Rank')
+                e1 = Entry(subframe_recommendation, relief=RIDGE)
+                e1.grid(row=i, column=1, sticky=NSEW)
+                e1.insert(END, 'Distillery Name')
+                e2 = Entry(subframe_recommendation, relief=RIDGE)
+                e2.grid(row=i, column=2, sticky=NSEW)
+                e2.insert(END, 'Distance')
+            else:
+                e0 = Entry(subframe_recommendation, relief=RIDGE)
+                e0.grid(row=i, column=0, sticky=NSEW)
+                e0.insert(END,i)
+                e1 = Entry(subframe_recommendation, relief=RIDGE)
+                e1.grid(row=i, column=1, sticky=NSEW)
+                e1.insert(END, num2dis[recommendations[i-1][0]])
+                e2 = Entry(subframe_recommendation, relief=RIDGE)
+                e2.grid(row=i, column=2, sticky=NSEW)
+                e2.insert(END, recommendations[i-1][1])
+
+        subframe_recommendation.pack()
 
 
 # Display Frontpage
@@ -56,8 +81,8 @@ def display_frontpage(results, num2dis):
         clear_frame(frame_page2_input)
 
         # Create empty box for follow up instruction (Question 2)
-        headline_secondchoice = tk.Label(master=frame_page2_question, text='')
-        headline_secondchoice.pack()
+        # headline_secondchoice = tk.Label(master=frame_page2_question, text='')
+        # headline_secondchoice.pack()
 
         if choice == 1:
             # Helper function
@@ -84,8 +109,9 @@ def display_frontpage(results, num2dis):
 
 
             # Show instruction
-            headline_secondchoice.config(
+            headline_secondchoice = tk.Label(master=frame_page2_input, 
                 text='Please select your favourite whisky:')
+            headline_secondchoice.pack()
             
             # Create children frames and function
             frame2 = tk.Frame(frame_page2_input)
