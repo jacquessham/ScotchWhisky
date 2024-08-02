@@ -77,8 +77,8 @@ def display_frontpage(results, num2dis):
                 space.pack() # Add space to be consistent with choice==2
                 plot_table(frame2, recommendations, num2dis)
                 # Generate a recommmendation here
-                frame2.pack()
-                frame_page2_input.pack()
+                # frame2.pack()
+                # frame_page2_input.pack()
 
             # Ending Helper function
 
@@ -100,8 +100,8 @@ def display_frontpage(results, num2dis):
             
 
             # Pack all setups before user's q2 selection
-            frame_page2_question.pack()
             headline_secondchoice.pack()
+            frame_page2_question.pack()
             q2_dropdown.pack()
             frame2.pack()
             frame_page2_input.pack()
