@@ -65,7 +65,13 @@ The calculation of the characteristc distance between 2 whiskies would be taken 
 <br>
 Then, repeat for all whisky-pairs.
 
+<img src="../Images/lapointe_formula.png">
 
+
+<br>
+In the exmaple between Bunnahabhain and Tullibardine
+<img src="../Images/ex_cofficient.png">
+<img src="../Images/ex_lapointe_formula.png">
 
 ## R
 Folder link: [R](R)
@@ -114,7 +120,11 @@ You may find the results generated from both algorithms vary, there are two reas
 </ul>
 
 ## Recommendation Application
-As mentioned in the previous section, you also find the recommendation application with this approach in the [Python](Python) folder. Note that it is only available in Python.
+As mentioned in the previous section, you also find the recommendation application with the instructions using this approach in the [Python](Python) folder. Note that it is only available in Python.
+
+<img src="../Images/lapointe_favwhisky_recomm.png">
+<img src="../Images/lapointe_maccallan_recomm.png">
+
 
 ## Glossary
 <ul>
