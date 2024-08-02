@@ -73,6 +73,8 @@ def display_frontpage(results, num2dis):
                 print(recommendations)
 
                 # Pack all setups
+                space = tk.Label(master=frame2, text='')
+                space.pack() # Add space to be consistent with choice==2
                 plot_table(frame2, recommendations, num2dis)
                 # Generate a recommmendation here
                 frame2.pack()
@@ -84,7 +86,7 @@ def display_frontpage(results, num2dis):
             # Show instruction
             headline_secondchoice.config(
                 text='Please select your favourite whisky:')
-
+            
             # Create children frames and function
             frame2 = tk.Frame(frame_page2_input)
             # Dropdown list here
