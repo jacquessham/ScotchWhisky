@@ -2,6 +2,8 @@ from sys import argv
 import numpy as np
 
 
+num_MaCallan=84
+
 def load_data(data='adjusted'):
 	# Read all files and prepare the data first
 	## To load distance trained with Lapointe and Legendre Algo
@@ -97,7 +99,8 @@ def display_recommendation(fav_whisky, recommendations, dev_mode=False):
 
 # Return recommendation based on user's selection
 ## If there user's selection, use 84 (McCallan)
-def get_recommendation(results, num2dis, fav_whisky_num=84, dev_mode=False):
+def get_recommendation_shell(results, num2dis, fav_whisky_num=84, 
+		dev_mode=False):
 	# Select a whisky first
 	selected = enumerate(results[fav_whisky_num].tolist())
 
@@ -122,6 +125,15 @@ def get_recommendation(results, num2dis, fav_whisky_num=84, dev_mode=False):
 	# recommendation is (distillery_name, distillery_index, similarity_score)
 	recommendations = [(num2dis[i], i, score) for i, score in recommendations]
 	display_recommendation(num2dis[fav_whisky_num], recommendations, dev_mode)
+
+def get_recommendation(results, num2dis, fav_whisky_num=num_MaCallan, 
+		dev_mode=False, shell=True):
+	if not shell:
+		top = 10
+		return sorted(enumerate(results[fav_whisky_num].tolist()),
+					key=lambda x: x[1])[1:top+1]
+	get_recommendation_shell(results, num2dis, fav_whisky_num, dev_mode)
+
 
 def interact(results, dis2num, num2dis, dev_mode=False):
 	repeat = True
@@ -171,4 +183,5 @@ def main(gui=False):
 	results, dis2num, num2dis = load_data(data)
 	if gui:
 		return results, dis2num, num2dis
+	# If command line, interact with user
 	interact(results, dis2num, num2dis, dev_mode)

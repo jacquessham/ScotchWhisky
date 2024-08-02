@@ -11,6 +11,6 @@ gui.title('Whisky Recommender')
 
 # Load Data
 results, dis2num, num2dis = main(True)
-display_frontpage()
+display_frontpage(results, num2dis)
 
 gui.mainloop()
