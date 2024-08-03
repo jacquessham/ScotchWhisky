@@ -99,7 +99,7 @@ def display_recommendation(fav_whisky, recommendations, dev_mode=False):
 
 # Return recommendation based on user's selection
 ## If there user's selection, use 84 (McCallan)
-def get_recommendation_shell(results, num2dis, fav_whisky_num=84, 
+def get_recommendation_shell(results, num2dis, fav_whisky_num=num_MaCallan,
 		dev_mode=False):
 	# Select a whisky first
 	selected = enumerate(results[fav_whisky_num].tolist())

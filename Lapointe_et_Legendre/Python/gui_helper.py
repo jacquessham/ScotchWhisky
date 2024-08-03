@@ -35,6 +35,7 @@ def plot_table(root, recommendations, num2dis):
         subframe_recommendation = tk.Frame(root)
 
         """
+        ## This block can be used when users does not care about distance
         for i in range(height):
             for j in range(4):
                 i_recommendation = i*4+j
@@ -45,6 +46,7 @@ def plot_table(root, recommendations, num2dis):
                         num2dis[recommendations[i_recommendation][0]])
         """
 
+        # This block can be used when displaying distance is needed
         for i in range(len(recommendations)+1):
             if i == 0:
                 e0 = Entry(subframe_recommendation, relief=RIDGE)
@@ -80,34 +82,25 @@ def display_frontpage(results, num2dis):
         clear_frame(frame_page2_question)
         clear_frame(frame_page2_input)
 
-        # Create empty box for follow up instruction (Question 2)
-        # headline_secondchoice = tk.Label(master=frame_page2_question, text='')
-        # headline_secondchoice.pack()
-
+        # When users want to pick a whisky to start with
         if choice == 1:
             # Helper function
             def q2_selection(event):
                 clear_frame(frame2)
                 q2_distillery = q2_dropdown.get()
                 q2_choice = int(q2_distillery[0])-1
-                print(q2_choice)
-                print(num2dis[q2_choice])
 
+                # Get a list of recommendation
                 recommendations = get_recommendation(results, num2dis, 
                     q2_choice, False, False)
-                print(recommendations)
 
                 # Pack all setups
                 space = tk.Label(master=frame2, text='')
                 space.pack() # Add space to be consistent with choice==2
                 plot_table(frame2, recommendations, num2dis)
-                # Generate a recommmendation here
-                # frame2.pack()
-                # frame_page2_input.pack()
 
-            # Ending Helper function
-
-
+            
+            # UI Display here for choice 1
             # Show instruction
             headline_secondchoice = tk.Label(master=frame_page2_input, 
                 text='Please select your favourite whisky:')
@@ -133,19 +126,19 @@ def display_frontpage(results, num2dis):
             frame_page2_input.pack()
 
 
+        # When user wants the program pick a whisky for them
         if choice == 2:
-            # headline_secondchoice.config(text='')
+            # Notify user through pop up text box
             messagebox.showinfo(
                 title='Selection',
                 message=f"You may try MaCallan"
             )
 
+            # num_MaCallan comes from recommendation_flow.py
             q2_choice = num_MaCallan 
-            print(q2_choice)
-            print(num2dis[q2_choice])
+            # Get a list of recommendation
             recommendations = get_recommendation(results, num2dis, q2_choice, 
                 False, False)
-            print(recommendations)
 
             # Pack all setups
             frame2 = tk.Frame(frame_page2_input)
@@ -153,6 +146,8 @@ def display_frontpage(results, num2dis):
             # Generate a recommmendation here
             frame2.pack()
             frame_page2_input.pack()
+
+        # Ending Helper function
 
 
     # Define all base Frames
@@ -163,7 +158,7 @@ def display_frontpage(results, num2dis):
     frame_page2_input = tk.Frame()
     
 
-
+    # Base UI structure are built here
     # Headline
     headline = tk.Label(master=frame_main,
                         text='Welcome to the Whisky Recommender')
