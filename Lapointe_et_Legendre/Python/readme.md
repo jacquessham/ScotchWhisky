@@ -56,22 +56,40 @@ The workflow of <i>calculate_distance</i> function is:
 
 
 ### recommedation_developer.py
-This script allows users to interact the result on command line.
+This script allows users to interact the result on command line. <i>If the users like to interact on a GUI interface, use the recommendation_gui.py</i>
 <br><br>
 <i>recommedation_developer.py</i> relies on the following files:
 <ul>
 	<li><i>adj_distance.txt</i>: Result from <i>adj_distance.py</i></li>
 	<li><i>distillery.csv</i>: For displaying the name of the whiskies/distilleries</li>
+	<li>recommendation_flow.py: Consists of helper functions to drive the backend</li>
 </ul>
 
 <br>
-Once the script is run, it will enter the homepage: The user may either pick a whisky for to start the recommendation or has the program pick something for him. Then, the program will return the Top 5 most similar whiskies in order along with the distillery names. If the user wish to continue for another recommendation, it will bring the user back to homepage, otherwise, the program will end. 
+Once the script is run, it will enter the homepage: The user may either pick a whisky for start the recommendation or has the program pick something for him. Then, the program will return the Top 10 most similar whiskies in the order based on closest distance along with the distillery names. If the user wish to continue for another recommendation, it will bring the user back to homepage, otherwise, the program will end. 
 <br><br>
 This script has a developer mode, it allows users to look at the distance between the two selected whiskies and display the number of recommendation the users wish to display. To enable developer mode, add an arguement <b>dev</b> when execute the script on command line.
 
 
+### recommedation_gui.py
+This script allows users to interact the result on the GUI interface. 
+<br><br>
+<i>recommedation_developer.py</i> relies on the following files:
+<ul>
+	<li><i>adj_distance.txt</i>: Result from <i>adj_distance.py</i></li>
+	<li><i>distillery.csv</i>: For displaying the name of the whiskies/distilleries</li>
+	<li>recommendation_flow.py: Consists of helper functions to drive the backend</li>
+	<li>gui_helper.py: Consists of helper functions to drive the GUI frontend</li>
+</ul>
+
+<br>
+Once the script is run, it will generate a GUI interface: The user may either pick a whisky to start the recommendation or has the program to pick something for him through the dropdown list. Either way, the interact will generate a list of Top 10 most similar whiskies in the order based on closest distance along with the distillery names on a table. If the user wish to continue for another recommendation, he may simple select from the dropdown list to pick another whiskies.
+
+<b>GUI version does not have a developer mode and do not have plan to build it</b>
+
+
 ## Recommendation Application
-### Developer Version
+### Developer Version (Command Line)
 In order to run the recommendation application in developer mode, execute this on the command line:
 
 ```
@@ -85,9 +103,9 @@ If the users decided to pick a whisky for recommendations, the program will list
 <img src="../../Images/recom_lapointe_prod_whiskylist.png">
 
 <br>
-Once the users have selected, the program will return the top 5 whiskies that is the most similar to the user selected whisky.
+Once the users have selected, the program will return the top 10 whiskies that is the most similar to the user selected whisky.
 <br><br>
-If the users have no idea where to start and have the program pick something for them, the program will recommend McCallan for the users and show the top 5 whiskes that is the most similar to McCallan.
+If the users have no idea where to start and have the program pick something for them, the program will recommend McCallan for the users and show the top 10 whiskes that is the most similar to McCallan (MaCallan is the answer to Cold Start Problem discussed in the <a href="lapointe_favwhisky_recomm.png">Original Application section</a>).
 <br><br>
 In either case, the program will ask if the users wish to repeat and end the program.
 
@@ -111,5 +129,20 @@ The workflow of the program is the same but the program will ask for the number 
 
 
 ### UI Version
-The plan of displaying the recommendation on an UI will be released in the next version.<br>
-Coming soon...
+In order to run the recommendation application in developer mode, execute this on the command line:
+
+```
+python recommendation_gui.py
+```
+
+Then, a GUI interface will be generated. The users may either pick a whisky or have the program pick a whisky for him through the dropdown list. If the user decided to pick a whisky to recommend a list of similar whisky, the interface will generate a dropdown list for the user to pick from. Once the users have picked a whisky, the program will generate a list of recommendations in a table format.
+
+<img src="../../Images/lapointe_favwhisky_recomm.png">
+
+<br>
+If the users have the program to pick one for them, the program will pick MaCallan as the picked whisky and generate a list of recommendations that is similar to MaCallan (MaCallan is the answer to Cold Start Problem discussed in the <a href="lapointe_favwhisky_recomm.png">Original Application section</a>). 
+
+<img src="../../Images/lapointe_maccallan_recomm.png">
+
+<br>
+If the users wish to pick another whisky, simple pick another one from the dropdown list. Alternative, the users may end the session by closing the window.

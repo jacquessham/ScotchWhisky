@@ -117,9 +117,9 @@ def get_recommendation_shell(results, num2dis, fav_whisky_num=84,
 					print('Please enter a number greater than 1!')
 			except:
 				print('Invalid input...please try again!')
-	# If not dev_mode, just show top 5
+	# If not dev_mode, just show top 10
 	else:
-		top = 5
+		top = 10
 	# Display Result
 	recommendations = sorted(selected, key=lambda x: x[1])[1:top+1]
 	# recommendation is (distillery_name, distillery_index, similarity_score)
