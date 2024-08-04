@@ -2,8 +2,20 @@ from sys import argv
 import numpy as np
 
 
-def load_data():
+num_MaCallan=84
+
+def load_data(data='adjusted'):
 	# Read all files and prepare the data first
+	## To load distance trained with Lapointe and Legendre Algo
+	if data == 'adjusted':
+		filename = 'adj_distance.txt'
+	## To load original distance (Standard Similarity)
+	elif data == 'standard':
+		filename = 'distance.txt'
+	else:
+		print('Input invalid...using adj_distance.txt')
+		filename = 'adj_distance.txt'
+
 	## Prepare distillery names
 	with open('../Data/Transformation/distillery.csv') as f:
 		# Remove header, first entry will have index=0
@@ -15,7 +27,7 @@ def load_data():
 		num2dis[num] = dis
 
 	## Read the result
-	results = np.loadtxt('adj_distance.txt',dtype=float)
+	results = np.loadtxt(filename, dtype=float)
 
 	return results, dis2num, num2dis
 
@@ -87,7 +99,8 @@ def display_recommendation(fav_whisky, recommendations, dev_mode=False):
 
 # Return recommendation based on user's selection
 ## If there user's selection, use 84 (McCallan)
-def get_recommendation(results, num2dis, fav_whisky_num=84, dev_mode=False):
+def get_recommendation_shell(results, num2dis, fav_whisky_num=num_MaCallan,
+		dev_mode=False):
 	# Select a whisky first
 	selected = enumerate(results[fav_whisky_num].tolist())
 
@@ -104,14 +117,23 @@ def get_recommendation(results, num2dis, fav_whisky_num=84, dev_mode=False):
 					print('Please enter a number greater than 1!')
 			except:
 				print('Invalid input...please try again!')
-	# If not dev_mode, just show top 5
+	# If not dev_mode, just show top 10
 	else:
-		top = 5
+		top = 10
 	# Display Result
 	recommendations = sorted(selected, key=lambda x: x[1])[1:top+1]
 	# recommendation is (distillery_name, distillery_index, similarity_score)
 	recommendations = [(num2dis[i], i, score) for i, score in recommendations]
 	display_recommendation(num2dis[fav_whisky_num], recommendations, dev_mode)
+
+def get_recommendation(results, num2dis, fav_whisky_num=num_MaCallan, 
+		dev_mode=False, shell=True):
+	if not shell:
+		top = 10
+		return sorted(enumerate(results[fav_whisky_num].tolist()),
+					key=lambda x: x[1])[1:top+1]
+	get_recommendation_shell(results, num2dis, fav_whisky_num, dev_mode)
+
 
 def interact(results, dis2num, num2dis, dev_mode=False):
 	repeat = True
@@ -129,19 +151,37 @@ def interact(results, dis2num, num2dis, dev_mode=False):
 		# Ask user if he wants to repeat the inquire again
 		repeat = repeat_or_not()
 
-def main():
-	try:
-		if argv[1].lower() == 'dev':
-			print('Entering developer mode...')
-			dev_mode = True
-		else:
-			dev_mode = False
-	except:
-		# Avoid display the message when user intend to use production mode
-		if len(argv)>1:
-			print('Invalid input, entering in production mode...')
-		dev_mode = False
-	results, dis2num, num2dis = load_data()
-	interact(results, dis2num, num2dis, dev_mode)
+def is_dev_mode(argv):
+	if argv[1].lower() == 'dev':
+		print('Entering developer mode...')
+		return True
+	print('Invalid input, entering in production mode...')
+	return False
 
-main()
+def main(gui=False):
+	# Load adj_distance.txt or distance.txt
+	data = 'adjusted'
+	# When user did not enter any argument
+	if len(argv)-1 == 0:
+		dev_mode = False
+	# When user only enter dev mode
+	elif len(argv)-1 == 1:
+		dev_mode = is_dev_mode(argv)
+	# When user enter dev mode and use standard data
+	elif len(argv)-1 == 2:
+		dev_mode = is_dev_mode(argv)
+		if dev_mode and argv[2] == 'standard':
+			print('Using Standard Similarity Data')
+			data = 'standard'
+		# When dev_mode is true but argv[2] input is invalid
+		elif dev_mode:
+			print(f'{argv[2]} is an invalid input, using adj_distance.txt')
+	else:
+		print('Invalid input, entering in production mode...')
+		dev_mode = False
+
+	results, dis2num, num2dis = load_data(data)
+	if gui:
+		return results, dis2num, num2dis
+	# If command line, interact with user
+	interact(results, dis2num, num2dis, dev_mode)
