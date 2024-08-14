@@ -1,5 +1,5 @@
 # Whisky Analysis by Lapointe and Legendre
-After reading the paper written by Lapointe and Legendre, it inspires many whisky and data lovers to recommend whiskies to the boarder auidence through a quantitative approach. In this exercise, we will explore the approach taken by Lapointe and Legendre and apply for the whisky recommendation system.
+After reading the paper written by Lapointe and Legendre, it inspires many whisky and data lovers to recommend whiskies to the boarder auidence through a quantitative approach. In this exercise, we will explore the approach taken by Lapointe and Legendre and apply for the whisky recommendation system. You may also go to this <a href="https://medium.com/@jjsham/improving-the-scotch-whisky-recommendation-application-325168491fda">link</a> to read the findings at this Medium post.
 
 
 ## Data

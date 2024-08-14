@@ -3,7 +3,9 @@ This project is aimed to build a content-based recommendation system to help Sco
 <br><br>
 Please refer to [Report](/Report) to understand the process of how the recommendation system is built. Also, there is a Medium Post to talk about this project. If you would like to read the Medium post, you may refer to the <a href="https://towardsdatascience.com/recommending-scotch-whisky-ea440c2eb289">link</a>
 <br><br>
-<b>If you are interested with the application which can recommend whisky to you, you may check out the <a href="https://github.com/jacquessham/ScotchWhisky/tree/master/RecommendationApplication">Recommendation Application</a> folder</b>. If you would like to read the Medium post about the frontend upgrade of this application, you may go to this <a href="https://medium.com/stackademic/upgrading-the-frontend-of-my-previous-machine-learning-project-da8d8005f20d">link</a>.
+<b>If you are interested with the application which can recommend whisky to you, you may check out the <a href="https://github.com/jacquessham/ScotchWhisky/tree/master/RecommendationApplication">Recommendation Application</a> folder</b>. If you would like to read the Medium post about the frontend upgrade of this application, you may go to this <a href="https://medium.com/stackademic/upgrading-the-frontend-of-my-previous-machine-learning-project-da8d8005f20d">link</a>. 
+<br><br>
+We have reviewed Lapointe and Legendre's algorithm on improving the recommendation system, you may find out more at this <a href="https://github.com/jacquessham/ScotchWhisky/tree/master/Lapointe_et_Legendre">folder</a>, or go to this <a href="https://medium.com/@jjsham/improving-the-scotch-whisky-recommendation-application-325168491fda">link</a> to read the Medium post on the findings. 
 <br><br>
 Here are the brief structure of this repository.
 
@@ -104,7 +106,7 @@ In the [Report folder](Report), there is a report of going over how the recommen
 ## Whisky Analysis by Lapointe and Legendre
 In the [Lapointe et Legendre folder](Lapointe_et_Legendre), we are going to revisit the clusting approach with the algorithm suggested by Lapointe and Legendre's paper <i>A classification of pure malt Scotch whiskies</i>. Our goal is to improve the recommendation application.
 <br><br>
-You may find the recommendation application using Lapointe and Legendre's algorithm in this [folder](/Lapointe_et_Legendre/Python).
+You may find the recommendation application using Lapointe and Legendre's algorithm in this <a href="https://github.com/jacquessham/ScotchWhisky/tree/master/Lapointe_et_Legendre/Python#ui-version">folder</a>.
 
 ## Glossary
 <ul>
